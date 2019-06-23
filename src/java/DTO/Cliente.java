@@ -26,7 +26,6 @@ public class Cliente {
     private String Region;
     private String Contrasena;
     private String Codigo_confirmacion;
-     SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
 
     public Cliente() {
     }
