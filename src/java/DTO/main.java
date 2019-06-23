@@ -29,9 +29,12 @@ public class main {
         
        //Rol r = Service.RolService.getRol(1);
        
-       Producto p = Service.ProductoService.getProducto(1);
+       Producto p = Service.ProductoService.getProducto(6);
        
        List<Producto> ps = Service.ProductoService.getProductos();
+       
+       
+       System.out.println(p.getDescripcion());
        
        System.out.println(ps.get(0).getDescripcion());
 
