@@ -60,7 +60,7 @@ public class FukusukeController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);        
-        request.getRequestDispatcher("Error.jsp").forward(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
         
     }
 
@@ -81,15 +81,25 @@ public class FukusukeController extends HttpServlet {
         ArrayList<String> listaFail = new ArrayList<String>();
         boolean esValido = true;
         
-        if (request.getParameter("btn_login") != null) {
-            
-            //verificar datos de entrada:                       
-            request.getRequestDispatcher("login.jsp").forward(request, response);
-            
-            
+        /*********** INICIO NAV BAR ***********/
+        if (request.getParameter("nav_home") != null) {            
+            request.getRequestDispatcher("index.jsp").forward(request, response);                   
         }
+        if (request.getParameter("nav_nosotros") != null) {            
+            request.getRequestDispatcher("Nosotros.jsp").forward(request, response);                   
+        }
+        if (request.getParameter("nav_productos") != null) {            
+            request.getRequestDispatcher("Productos.jsp").forward(request, response);                   
+        }
+        if (request.getParameter("nav_contacto") != null) {            
+            request.getRequestDispatcher("Contacto.jsp").forward(request, response);                   
+        }
+        /*********** FIN NAV BAR ***********/
         
-        //PAGINA ERROR
+        
+        
+        
+        /*********** PAGINA ERROR ***********/
         request.getRequestDispatcher("Error.jsp").forward(request, response);
         
     }
