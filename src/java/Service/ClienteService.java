@@ -25,10 +25,10 @@ import java.util.List;
 public class ClienteService {
           private static String url = "http://pipedev-001-site1.ctempurl.com/api/clientes/";
 
-    public static Cliente getCliente(int id) {
+    public static Cliente getCliente(String Rut) {
         try {
 
-            URL url = new URL(ClienteService.url + id);
+            URL url = new URL(ClienteService.url + Rut);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
@@ -44,7 +44,7 @@ public class ClienteService {
             String output;
             StringBuilder content = new StringBuilder();
 
-            System.out.println("Output from Server .... \n");
+            //System.out.println("Output from Server .... \n");
             while ((output = br.readLine()) != null) {
                 content.append(output);
             }
