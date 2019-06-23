@@ -195,14 +195,14 @@
 			<div class="logo"><a href="#">FUKU<span>SUKE</span></a></div>
 			<nav class="main_nav">
 				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li class="active"><a href="index.html">Inicio</a></li>
-					<li><a href="nosotros.html">Nosotros</a></li>
-					<li><a href="Productos.html">Productos</a></li>				
-					<li><a href="contacto.html">Contacto</a></li>
+					<li class="active"><a href="index.jsp">Inicio</a></li>
+					<li><a href="nosotros.jsp">Nosotros</a></li>
+					<li><a href="Productos.jsp">Productos</a></li>				
+					<li><a href="contacto.jsp">Contacto</a></li>
 				</ul>
 			</nav>
 			
-			<div class="submit ml-auto"><a href="index.html">Mi carrito (0)</a></div>
+			<div class="submit ml-auto"><a href="index.jsp">Mi carrito (0)</a></div>
             <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 		</div>
 
@@ -221,10 +221,10 @@
 			</div>
 			<nav class="menu_nav">
 				<ul>
-					<li><a href="index.html">Inicio</a></li>
-					<li><a href="nosotros.html">Nosotros</a></li>
-					<li><a href="Productos.html">Productos</a></li>				
-					<li><a href="contacto.html">Contacto</a></li>
+					<li><a href="index.jsp">Inicio</a></li>
+					<li><a href="nosotros.jsp">Nosotros</a></li>
+					<li><a href="Productos.jsp">Productos</a></li>				
+					<li><a href="contacto.jsp">Contacto</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -408,10 +408,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
 							<nav class="footer_nav order-md-2 order-1 ml-md-auto">
 								<ul class="d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
-									<li><a href="index.html">Home</a></li>
-									<li><a href="nosotros.html">Nosotros</a></li>
-									<li><a href="Productos.html">Productos</a></li>									
-									<li><a href="contacto.html">Contacto</a></li>
+									<li><a href="index.jsp">Home</a></li>
+									<li><a href="nosotros.jsp">Nosotros</a></li>
+									<li><a href="Productos.jsp">Productos</a></li>									
+									<li><a href="contacto.jsp">Contacto</a></li>
 								</ul>
 							</nav>
 						</div>
