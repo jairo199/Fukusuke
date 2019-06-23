@@ -10,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -24,11 +25,19 @@ public class main {
 
     public static void main(String[] args) throws MalformedURLException, IOException {
 
-       // Usuario u = Service.UsuarioService.getUsuario(5);
+        // Usuario u = Service.UsuarioService.getUsuario(5);
+       // Rol r = Service.RolService.getRol(1);
+
+        //System.out.println(r.getDescripcion());
+
+        Usuario u = new Usuario(0, "Jorge", "Troncoso", "1234", 2);
         
-       Rol r = Service.RolService.getRol(1);
-       
-       System.out.println(r.getDescripcion());
+        if(Service.UsuarioService.postUsuario(u)){
+            System.out.println("Ingresado");
+        }else{
+            System.out.println("Algo paso");
+        }
 
     }
+
 }
