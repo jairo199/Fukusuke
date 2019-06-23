@@ -5,11 +5,13 @@
  */
 package Controllers;
 
+import DTO.Producto;
 import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -50,8 +52,12 @@ public class FukusukeController extends HttpServlet {
         if (request.getParameter("nav_nosotros") != null) {            
             request.getRequestDispatcher("Nosotros.jsp").forward(request, response);                   
         }
-        if (request.getParameter("nav_productos") != null) {            
-            request.getRequestDispatcher("Productos.jsp").forward(request, response);                   
+        if (request.getParameter("nav_productos") != null) { 
+            
+            List<Producto> ListaDTO = Service.ProductoService.getProductos();
+            request.setAttribute("lstProducto", ListaDTO);            
+            request.getRequestDispatcher("Productos.jsp").forward(request, response);
+                
         }
         if (request.getParameter("nav_contacto") != null) {            
             request.getRequestDispatcher("Contacto.jsp").forward(request, response);                   
