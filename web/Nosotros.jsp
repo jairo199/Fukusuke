@@ -97,7 +97,7 @@
 				<div class="form-group">
 				  <label for="email">Email</label>
 				  <input type="email" class="form-control" id="email" placeholder="demo@email.cl" required="true">			    
-				  <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electr√≥nico con nadie m√°s.</small>
+				  <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrÛnico con nadie m·s.</small>
 				</div>
   
 				<div class="form-group">
@@ -158,7 +158,7 @@
 					<!-- Address -->
 					<li class="d-flex flex-row align-items-center justify-content-start">
 						<div><img src="images/placeholder.svg" alt=""></div>
-						<span>Direccion, Local , Concepci√≥n</span>
+						<span>Direccion, Local , ConcepciÛn</span>
 					</li>
 					<!-- Email -->
 					<li class="d-flex flex-row align-items-center justify-content-start">
@@ -261,29 +261,29 @@
 								
 							-->
 							<p>
-									El restaurant de sushi Fukusuke, es	una	empresa	dedicada a la preparaci√≥n y	venta de sushi en la modalidad online y en su propio local.
-									A mediados de enero del 2014 comienza el funcionamiento de Fukusuke Sushi-Delivery, ubicado en la comuna de Concepcion, el cual es atendido por sus propios due√±os.<span id="dots">..</span>
-									<span id="more"> La iniciativa de abrir un Sushi Delivery es debido al auge que ha tenido gastron√≥micamente en los √∫ltimos a√±os la comida japonesa y lo pr√°ctico que es recibir en la comodidad del hogar un producto ex√≥tico, refinado y vanguardista.
-									Motiv√°ndonos a entregar un excelente servicio al cliente, siendo este el m√°s importante, adem√°s de ir variando y ampliando continuamente nuestra carta seg√∫n los requerimientos y sugerencias de estos mismos.
+									El restaurant de sushi Fukusuke, es una empresa dedicada a la preparaciÛn y venta de sushi en la modalidad online y en su propio local.
+									A mediados de enero del 2014 comienza el funcionamiento de Fukusuke Sushi-Delivery, ubicado en la comuna de Concepcion, el cual es atendido por sus propios dueÒos.<span id="dots">..</span>
+									<span id="more"> La iniciativa de abrir un Sushi Delivery es debido al auge que ha tenido gastron√≥micamente en los ˙ltimos aÒos la comida japonesa y lo pr·ctico que es recibir en la comodidad del hogar un producto exÛtico, refinado y vanguardista.
+									Motiv·ndonos a entregar un excelente servicio al cliente, siendo este el m·s importante, adem·s de ir variando y ampliando continuamente nuestra carta seg˙n los requerimientos y sugerencias de estos mismos.
 									</span>
 								</p>
 								<span id="more2">
 								<br>
-								<h4>Visi√≥n</h4>
+								<h4>VisiÛn</h4>
 								<p>		
 									
-									La Visi√≥n de Fukusuke Sushi-Delivery es posicionarse como el mejor Sushi y Delivery de la comuna en relaci√≥n a Precio, Calidad y Servicio.
+									La VisiÛn de Fukusuke Sushi-Delivery es posicionarse como el mejor Sushi y Delivery de la comuna en relaciÛn a Precio, Calidad y Servicio.
 								</p>
-								<h4>Misi√≥n</h4>
+								<h4>MisiÛn</h4>
 								<p>
 									
-									Misi√≥n de Fukusuke Sushi-Delivery es entregar al cliente el mejor servicio en todo momento que lo requiera en cuanto a calidad del producto, higiene, elaboraci√≥n y entrega de este.
-									Adem√°s de preocuparse de estar atentos a las tendencias de mercado y gastron√≥micas para hacer que Fukusuke entregue el mejor producto tanto en calidad as√≠ como precios accesibles.
+									MisiÛn de Fukusuke Sushi-Delivery es entregar al cliente el mejor servicio en todo momento que lo requiera en cuanto a calidad del producto, higiene, elaboraciÛn y entrega de este.
+									Adem·s de preocuparse de estar atentos a las tendencias de mercado y gastronÛmicas para hacer que Fukusuke entregue el mejor producto tanto en calidad asÌ como precios accesibles.
 								 
 								</p>
 							</span>
 							</div>
-							<div onclick="readMore()" id="myBtn" class="button intro_button"><a href="#introo" id="btntext">Leer M√°s</a></div>
+							<div onclick="readMore()" id="myBtn" class="button intro_button"><a href="#introo" id="btntext">Leer M·s</a></div>
 						</div>
 				</div>
 
@@ -306,7 +306,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="section_title_container text-center">
-						<div class="section_subtitle">"Cumpliendo nuestra misi√≥n"</div>
+						<div class="section_subtitle">"Cumpliendo nuestra misiÛn"</div>
 						<div class="section_title"><h1>Nuestros Servicios</h1></div>
 					</div>
 				</div>
@@ -342,7 +342,7 @@
 							<div class="service_title"><h3>Calidad de servicio</h3></div>
 						</div>
 						<div class="service_text">
-							<p>Gracias a las criticcas, comentarios y recomendaciones hemos logrado mantener una calidad inegualable en nuestros productos. Calidad que se hace notar cuando nuestros clientes vuelven al local y felicitandonos por un buen servicio al despedirse de este.</p>
+							<p>Gracias a las criticcas, comentarios y recomendaciones hemos logrado mantener una calidad inegualable en nuestros productos. Calidad que se hace notar cuansdo nuestros clientes vuelven al local y felicitandonos por un buen servicio al despedirse de este.</p>
 						</div>
 					</div>
 				</div>
@@ -563,7 +563,7 @@
 			</div>
 			<div class="row contact_row">
 				<div class="col">
-					<div class="button ml-auto mr-auto"><a href="contacto.html">contactenos</a></div>
+					<div class="button ml-auto mr-auto"><a href="contacto.jsp">contactenos</a></div>
 				</div>
 			</div>
 		</div>
@@ -598,7 +598,7 @@
 					<!-- Footer Column -->
 					<div class="col-xl-3 col-lg-6 footer_col">
 						<div class="footer_column">
-							<div class="footer_title">Informaci√≥n</div>
+							<div class="footer_title">InformaciÛn</div>
 							<div class="footer_info">
 								<ul>
 									<!-- Phone -->
@@ -609,7 +609,7 @@
 									<!-- Address -->
 									<li class="d-flex flex-row align-items-center justify-content-start">
 										<div><img src="images/placeholder.svg" alt=""></div>
-										<span>Direccion, Local , Concepci√≥n</span>
+										<span>Direccion, Local , ConcepciÛn</span>
 									</li>
 									<!-- Email -->
 									<li class="d-flex flex-row align-items-center justify-content-start">
