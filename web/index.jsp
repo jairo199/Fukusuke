@@ -160,7 +160,7 @@
 					<!-- Address -->
 					<li class="d-flex flex-row align-items-center justify-content-start">
 						<div><img src="images/placeholder.svg" alt=""></div>
-						<span>Direccion, Local , ConcepciÃ³n</span>
+						<span>Direccion, Local , Concepción</span>
 					</li>
 					<!-- Email -->
 					<li class="d-flex flex-row align-items-center justify-content-start">
@@ -246,7 +246,7 @@
 			 				<div class="row">
 			 					<div class="col">
 			 						<div class="home_content">
-			 							<div class="home_title"><h1>Â¡Handroll a Luca!</h1></div>
+			 							<div class="home_title"><h1>¡Handroll a Luca!</h1></div>
 										 <div class="home_price_tag">$1.000</div>
 										 <hr>
 										 <div class="container"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique error temporibus nam laudantium hic ad excepturi fugit cupiditate nihil tempora. Quaerat culpa pariatur libero porro, magnam in non fugit architecto.</p></div>
@@ -333,7 +333,7 @@
 							</div>
 							<div class="section_title_container">
 								<div class="section_subtitle">Zona Delivery</div>
-								<div class="section_title"><h1>Conoce las zonas donde realizamos envÃ­os</h1></div>
+								<div class="section_title"><h1>Conoce las zonas donde realizamos envíos</h1></div>
 								<div><img src="images/scooter.svg" alt="" height="100px" ></div>
 							</div>
 							
@@ -371,7 +371,7 @@
 					<!-- Footer Column -->
 					<div class="col-xl-3 col-lg-6 footer_col">
 						<div class="footer_column">
-							<div class="footer_title">InformaciÃ³n</div>
+							<div class="footer_title">Información</div>
 							<div class="footer_info">
 								<ul>
 									<!-- Phone -->
@@ -382,7 +382,7 @@
 									<!-- Address -->
 									<li class="d-flex flex-row align-items-center justify-content-start">
 										<div><img src="images/placeholder.svg" alt=""></div>
-										<span>Direccion, Local , ConcepciÃ³n</span>
+										<span>Direccion, Local , Concepción</span>
 									</li>
 									<!-- Email -->
 									<li class="d-flex flex-row align-items-center justify-content-start">
