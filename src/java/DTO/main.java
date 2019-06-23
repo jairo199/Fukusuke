@@ -5,13 +5,20 @@
  */
 package DTO;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import sun.misc.IOUtils;
+
 /**
  *
  * @author Jairo
  */
 public class main {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MalformedURLException, IOException {
        
         Rol r = new Rol();
         r.setCodigo_rol(1);
@@ -28,8 +35,11 @@ public class main {
             System.out.println ("USER; "+ u.toString());
         }
         
+        //http://pipedev-001-site1.ctempurl.com/api/Clientes
+        
         
         
     }
+    
     
 }

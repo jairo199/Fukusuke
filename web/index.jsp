@@ -354,8 +354,10 @@
 						<div class="footer_about">
 							<div class="footer_logo"><a href="#">FUKU<span>SUKE</span></a></div>
 							<div class="footer_text">
-								<p>Nulla aliquet bibendum sem, non placerat risus venenatis at. Prae sent vulputate bibendum dictum. Cras at vehicula urna. Suspendisse fringilla lobortis justo, ut tempor leo cursus in.</p>
-							</div>
+								
+                                                                <p>El restaurant de sushi Fukusuke, es una empresa dedicada a la preparación y venta de sushi en la modalidad online y años de trayectoria en su propio local.</p>
+							
+                                                        </div>
 							<div class="social">
 								<ul class="d-flex flex-row align-items-center justify-content-start">
 									
