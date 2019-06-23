@@ -14,6 +14,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.List;
 import sun.misc.IOUtils;
 
 /**
@@ -26,9 +27,13 @@ public class main {
 
        // Usuario u = Service.UsuarioService.getUsuario(5);
         
-       Rol r = Service.RolService.getRol(1);
+       //Rol r = Service.RolService.getRol(1);
        
-       System.out.println(r.getDescripcion());
+       Producto p = Service.ProductoService.getProducto(1);
+       
+       List<Producto> ps = Service.ProductoService.getProductos();
+       
+       System.out.println(ps.get(0).getDescripcion());
 
     }
 }
