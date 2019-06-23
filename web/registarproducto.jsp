@@ -4,9 +4,10 @@
     Author     : Cheqcoslov
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <title>Registro de productos</title>
@@ -39,7 +40,7 @@
                             <a class=" dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                                     Administración
                             </a>
-                            <div class="dropdown-menu">
+                            <div class="dropdown-menu">-
                                 <a class="dropdown-item" href="gestionclientes.html">Gestion de Clientes</a>
                                 <a class="dropdown-item" href="gestionusuarios.html">Gestion de Usuarios</a>
                                 <a class="dropdown-item" href="gestionroles.html">Gestion de Roles</a>
@@ -135,14 +136,7 @@
                         <div class="footer_title" style="color: black;">Registro de productos</div>
                         <br>
                         <div class="container">
-                            <form class="form-horizontal" action="/action_page.php">
-                                <div class="form-group">
-                                    <label class="control-label col-sm-12" for="idproducto">ID producto:</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="idproducto" placeholder="ID del producto"
-                                            name="idproducto" disabled>
-                                    </div>
-                                </div>
+                            <form class="form-horizontal" method="post" action="<c:url value="/FukusukeController"/>">
                                 <div class="form-group">
                                     <label class="control-label col-sm-12" for="nombre">Nombre producto:</label>
                                     <div class="col-sm-10">
@@ -160,14 +154,14 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-2" for="precio">Precio:</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="precio" placeholder="$990"
+                                        <input type="number" class="form-control" id="precio" placeholder="$990"
                                             name="precio">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-sm-12" for="cantidad">Cantidad disponible:</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="cantidad"
+                                        <input type="number" class="form-control" id="cantidad"
                                             placeholder="Ingrese cantidad disponible" name="cantidad">
                                     </div>
                                 </div>
