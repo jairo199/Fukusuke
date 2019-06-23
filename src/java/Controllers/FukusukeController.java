@@ -59,9 +59,9 @@ public class FukusukeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
+        //processRequest(request, response);        
+        request.getRequestDispatcher("Error.jsp").forward(request, response);
         
-        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
     /**
@@ -83,14 +83,14 @@ public class FukusukeController extends HttpServlet {
         
         if (request.getParameter("btn_login") != null) {
             
-            //verificar datos de entrada:
-            
-            
+            //verificar datos de entrada:                       
             request.getRequestDispatcher("login.jsp").forward(request, response);
-            //Cliente c = new Cliente;
+            
             
         }
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        
+        //PAGINA ERROR
+        request.getRequestDispatcher("Error.jsp").forward(request, response);
         
     }
 
