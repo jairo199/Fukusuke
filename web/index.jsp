@@ -215,8 +215,8 @@
 		<div class="menu_log_reg">
 			<div class="log_reg d-flex flex-row align-items-center justify-content-end">
 				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li><a href="#">Login</a></li>
-					<li><a href="#">Register</a></li>
+                                        <li><a data-toggle="modal" href="#modalLogin">Ingresar</a></li>
+					<li><a data-toggle="modal" href="#modalRegisto">Registro</a></li>
 				</ul>
 			</div>
 			<nav class="menu_nav">
