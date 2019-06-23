@@ -37,7 +37,7 @@
 						<!-- Address -->
 						<li class="d-flex flex-row align-items-center justify-content-start">
 							<div><img src="images/placeholder.svg" alt=""></div>
-							<span>Direccion, Local , ConcepciÃ³n</span>
+							<span>Direccion, Local , Concepción</span>
 						</li>
 						<!-- Email -->
 						<li class="d-flex flex-row align-items-center justify-content-start">
@@ -140,7 +140,7 @@
 								<ul>
 									<li><a href="#" class="text-success text-center">Mis Datos</a></li>
 									<li><a href="#" class="">Mis Pedidos</a></li>
-									<li><button class="btn btn-danger">Cerrar SesiÃ³n</button></li>
+									<li><button class="btn btn-danger">Cerrar Sesión</button></li>
 								</ul>
 							</div>
 						</div>
@@ -167,25 +167,25 @@
 										</div>
 									</div>
 								<div class="form-group">
-									<label class="control-label col-sm-2" for="pass1">ContraseÃ±a:</label>
+									<label class="control-label col-sm-2" for="pass1">Contraseña:</label>
 									<div class="col-sm-10">
 										<input type="password" class="form-control" id="pass1"
-											placeholder="Ingrese contraseÃ±a" name="pass1">
+											placeholder="Ingrese contraseña" name="pass1">
 									</div>
 								</div>
 								<div class="form-group">
-										<label class="control-label col-sm-12" for="pass2">Reingrese contraseÃ±a:</label>
+										<label class="control-label col-sm-12" for="pass2">Reingrese contraseña:</label>
 										<div class="col-sm-10">
 											<input type="password" class="form-control" id="pass2"
-												placeholder="Ingrese contraseÃ±a" name="pass2">
+												placeholder="Ingrese contraseña" name="pass2">
 										</div>
 									</div>
 
 									<div class="form-group">
-											<label class="control-label col-sm-2" for="dir">DirecciÃ³n:</label>
+											<label class="control-label col-sm-2" for="dir">Dirección:</label>
 											<div class="col-sm-10">
 												<input type="password" class="form-control" id="dir"
-													placeholder="Ingrese Direccion" name="dir">
+													placeholder="Ingrese Dirección" name="dir">
 											</div>
 										</div>
 

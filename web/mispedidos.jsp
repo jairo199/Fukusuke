@@ -35,7 +35,7 @@
 					<!-- Address -->
 					<li class="d-flex flex-row align-items-center justify-content-start">
 						<div><img src="images/placeholder.svg" alt=""></div>
-						<span>Direccion, Local , ConcepciÃ³n</span>
+						<span>Direccion, Local , Concepción</span>
 					</li>
 					<!-- Email -->
 					<li class="d-flex flex-row align-items-center justify-content-start">
@@ -137,7 +137,7 @@
 									<ul>
 										<li><a href="perfil.html">Mis Datos</a></li>
 										<li><a href="#" class="text-success text-center">Mis Pedidos</a></li>
-										<li><button class="btn btn-danger">Cerrar SesiÃ³n</button></li>															
+										<li><button class="btn btn-danger">Cerrar Sesión</button></li>															
 									</ul>
 								</div>
 							</div>

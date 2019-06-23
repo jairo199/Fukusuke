@@ -30,7 +30,7 @@
 						<!-- Address -->
 						<li class="d-flex flex-row align-items-center justify-content-start">
 							<div><img src="images/placeholder.svg" alt=""></div>
-							<span>Direccion, Local , Concepci贸n</span>
+							<span>Direccion, Local , Concepci髇</span>
 						</li>
 						<!-- Email -->
 						<li class="d-flex flex-row align-items-center justify-content-start">
@@ -145,7 +145,7 @@
 								<div class="d-flex flex-column align-items-center justify-content-center">
 									<div><img src="images/placeholder_2.svg" alt=""></div>
 								</div>
-								<span>Direccion, Local , Concepci贸n</span>
+								<span>Direccion, Local , Concepci髇</span>
 							</li>
 							<li class="d-flex flex-row align-items-center justify-content-start">
 								<div class="d-flex flex-column align-items-center justify-content-center">
@@ -226,7 +226,7 @@
 						<!-- Footer Column -->
 						<div class="col-xl-3 col-lg-6 footer_col">
 							<div class="footer_column">
-								<div class="footer_title">Informaci贸n</div>
+								<div class="footer_title">Informaci髇</div>
 								<div class="footer_info">
 									<ul>
 										<!-- Phone -->
@@ -237,7 +237,7 @@
 										<!-- Address -->
 										<li class="d-flex flex-row align-items-center justify-content-start">
 											<div><img src="images/placeholder.svg" alt=""></div>
-											<span>Direccion, Local , Concepci贸n</span>
+											<span>Direccion, Local , Concepci髇</span>
 										</li>
 										<!-- Email -->
 										<li class="d-flex flex-row align-items-center justify-content-start">

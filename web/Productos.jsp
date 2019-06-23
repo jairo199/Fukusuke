@@ -35,7 +35,7 @@
 						<!-- Address -->
 						<li class="d-flex flex-row align-items-center justify-content-start">
 							<div><img src="images/placeholder.svg" alt=""></div>
-							<span>Direccion, Local , Concepción</span>
+							<span>Direccion, Local , Concepci�n</span>
 						</li>
 						<!-- Email -->
 						<li class="d-flex flex-row align-items-center justify-content-start">
@@ -135,8 +135,8 @@
 									<div class="search_inputs d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
 										<input type="text" class="search_input" placeholder="Producto..." required="required">
                                         <select class="search_input" id="cb_categoria">
-                                            <option>Categoría A</option>
-                                            <option>Categoría B</option>			      
+                                            <option>Categoria A</option>
+                                            <option>Categoria B</option>			      
                                         </select>
                                         
                                         <div></div>
@@ -182,7 +182,7 @@
 										<!--<img src="images/icon_10.png" alt="">-->
 										<div class="row">
 											<div class="col-sm-12" style="text-align: center;"><a href="producto.html">@Producto</a></div>
-											<div class="col-sm-12"><button class="btn btn-warning btn-block">Añadir a tu pedido</button></div>
+											<div class="col-sm-12"><button class="btn btn-warning btn-block">A�adir a tu pedido</button></div>
 										</div>
  
 										
@@ -210,7 +210,7 @@
 										<!--<img src="images/icon_10.png" alt="">-->
 										<div class="row">
 											<div class="col-sm-12" style="text-align: center;"><a href="producto.html">@Producto</a></div>
-											<div class="col-sm-12"><button class="btn btn-warning btn-block">Añadir a tu pedido</button></div>
+											<div class="col-sm-12"><button class="btn btn-warning btn-block">A�adir a tu pedido</button></div>
 										</div>
 									</div>
 									
@@ -236,7 +236,7 @@
 										<!--<img src="images/icon_10.png" alt="">-->
 										<div class="row">
 											<div class="col-sm-12" style="text-align: center;"><a href="producto.html">@Producto</a></div>
-											<div class="col-sm-12"><button class="btn btn-warning btn-block">Añadir a tu pedido</button></div>
+											<div class="col-sm-12"><button class="btn btn-warning btn-block">A�adir a tu pedido</button></div>
 										</div>
 									</div>
 									
@@ -264,7 +264,7 @@
 										<!--<img src="images/icon_10.png" alt="">-->
 										<div class="row">
 											<div class="col-sm-12" style="text-align: center;"><a href="producto.html">@Producto</a></div>
-											<div class="col-sm-12"><button class="btn btn-warning btn-block">Añadir a tu pedido</button></div>
+											<div class="col-sm-12"><button class="btn btn-warning btn-block">A�adir a tu pedido</button></div>
 										</div>
 									</div>
 									
@@ -292,7 +292,7 @@
 										<!--<img src="images/icon_10.png" alt="">-->
 										<div class="row">
 											<div class="col-sm-12" style="text-align: center;"><a href="producto.html">@Producto</a></div>
-											<div class="col-sm-12"><button class="btn btn-warning btn-block">Añadir a tu pedido</button></div>
+											<div class="col-sm-12"><button class="btn btn-warning btn-block">A�adir a tu pedido</button></div>
 										</div>
 									</div>
 									
@@ -320,7 +320,7 @@
 										<!--<img src="images/icon_10.png" alt="">-->
 										<div class="row">
 											<div class="col-sm-12" style="text-align: center;"><a href="producto.html">@Producto</a></div>
-											<div class="col-sm-12"><button class="btn btn-warning btn-block">Añadir a tu pedido</button></div>
+											<div class="col-sm-12"><button class="btn btn-warning btn-block">A�adir a tu pedido</button></div>
 										</div>
 									</div>
 									
@@ -332,7 +332,7 @@
 
 					</div>
 					<div class="load_more">
-						<div class="button ml-auto mr-auto"><a href="#">Ver más</a></div>
+						<div class="button ml-auto mr-auto"><a href="#">Ver m�s</a></div>
 					</div>
 				</div>
 			</div>
@@ -369,7 +369,7 @@
 						<!-- Footer Column -->
 						<div class="col-xl-3 col-lg-6 footer_col">
 							<div class="footer_column">
-								<div class="footer_title">Información</div>
+								<div class="footer_title">Informaci�n</div>
 								<div class="footer_info">
 									<ul>
 										<!-- Phone -->
@@ -380,7 +380,7 @@
 										<!-- Address -->
 										<li class="d-flex flex-row align-items-center justify-content-start">
 											<div><img src="images/placeholder.svg" alt=""></div>
-											<span>Direccion, Local , Concepción</span>
+											<span>Direccion, Local , Concepci�n</span>
 										</li>
 										<!-- Email -->
 										<li class="d-flex flex-row align-items-center justify-content-start">

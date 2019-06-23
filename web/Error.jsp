@@ -193,7 +193,7 @@
                                             <!-- Address -->
                                             <li class="d-flex flex-row align-items-center justify-content-start">
                                                 <div><img src="images/placeholder.svg" alt=""></div>
-                                                <span>Direccion, Local , ConcepciÃ³n</span>
+                                                <span>Direccion, Local , Concepción</span>
                                             </li>
                                             <!-- Email -->
                                             <li class="d-flex flex-row align-items-center justify-content-start">
