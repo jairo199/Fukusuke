@@ -27,10 +27,13 @@ public class main {
 
        // Usuario u = Service.UsuarioService.getUsuario(5);
         
-       List<Cliente> r = Service.ClienteService.getClientes();
+       //Rol r = Service.RolService.getRol(1);
        
-       System.out.println(r.get(0).getFecha_nacimiento());
+       Producto p = Service.ProductoService.getProducto(1);
        
+       List<Producto> ps = Service.ProductoService.getProductos();
+       
+       System.out.println(ps.get(0).getDescripcion());
 
     }
 }
