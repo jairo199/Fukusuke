@@ -14,6 +14,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.List;
 import sun.misc.IOUtils;
 
 /**
@@ -26,9 +27,10 @@ public class main {
 
        // Usuario u = Service.UsuarioService.getUsuario(5);
         
-       Rol r = Service.RolService.getRol(1);
+       List<Cliente> r = Service.ClienteService.getClientes();
        
-       System.out.println(r.getDescripcion());
+       System.out.println(r.get(0).getFecha_nacimiento());
+       
 
     }
 }

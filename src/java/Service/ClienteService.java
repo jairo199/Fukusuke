@@ -5,7 +5,7 @@
  */
 package Service;
 
-import DTO.Rol;
+import DTO.Cliente;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.io.BufferedReader;
@@ -20,16 +20,15 @@ import java.util.List;
 
 /**
  *
- * @author Pipedev
+ * @author Cheqcoslov
  */
-public class RolService {
-    
-        private static String url = "http://pipedev-001-site1.ctempurl.com/api/roles/";
+public class ClienteService {
+          private static String url = "http://pipedev-001-site1.ctempurl.com/api/clientes/";
 
-    public static Rol getRol(int id) {
+    public static Cliente getCliente(int id) {
         try {
 
-            URL url = new URL(RolService.url + id);
+            URL url = new URL(ClienteService.url + id);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
@@ -52,7 +51,7 @@ public class RolService {
 
             Gson g = new Gson();
 
-            Rol u = g.fromJson(content.toString(), Rol.class);
+            Cliente u = g.fromJson(content.toString(), Cliente.class);
 
             conn.disconnect();
 
@@ -70,10 +69,10 @@ public class RolService {
         }
     }
     
-        public static List<Rol> getRoles() {
+        public static List<Cliente> getClientes() {
         try {
 
-            URL url = new URL(RolService.url);
+            URL url = new URL(ClienteService.url);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
@@ -92,12 +91,12 @@ public class RolService {
             while ((output = br.readLine()) != null) {
                 content.append(output);
             }
-            Type listType = new TypeToken<ArrayList<Rol>>() {
+            Type listType = new TypeToken<ArrayList<Cliente>>() {
             }.getType();
 
             Gson g = new Gson();
 
-            List<Rol> roles = g.fromJson(content.toString(), listType);
+            List<Cliente> roles = g.fromJson(content.toString(), listType);
 
             conn.disconnect();
 
@@ -113,5 +112,4 @@ public class RolService {
             return null;
         }
     }
-    
 }
