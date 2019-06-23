@@ -15,12 +15,12 @@ public class Usuario {
     private String Nombres;
     private String Apellidos;
     private String Contrasena;
-    private Rol Codigo_rol;
+    private int Codigo_rol;
 
     public Usuario() {
     }
 
-    public Usuario(int Codigo_usuario, String Nombres, String Apellidos, String Contrasena, Rol Codigo_rol) {
+    public Usuario(int Codigo_usuario, String Nombres, String Apellidos, String Contrasena, int Codigo_rol) {
         this.Codigo_usuario = Codigo_usuario;
         this.Nombres = Nombres;
         this.Apellidos = Apellidos;
@@ -60,11 +60,11 @@ public class Usuario {
         this.Contrasena = Contrasena;
     }
 
-    public Rol getCodigo_rol() {
+    public int getCodigo_rol() {
         return Codigo_rol;
     }
 
-    public void setCodigo_rol(Rol Codigo_rol) {
+    public void setCodigo_rol(int Codigo_rol) {
         this.Codigo_rol = Codigo_rol;
     }
 

@@ -24,51 +24,11 @@ public class main {
 
     public static void main(String[] args) throws MalformedURLException, IOException {
 
-        //http://pipedev-001-site1.ctempurl.com/api/Clientes
-        try {
-
-            URL url = new URL("http://pipedev-001-site1.ctempurl.com/api/usuarios/1");
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("GET");
-            conn.setRequestProperty("Accept", "application/json");
-
-            if (conn.getResponseCode() != 200) {
-                throw new RuntimeException("Failed : HTTP error code : "
-                        + conn.getResponseCode());
-            }
-
-            BufferedReader br = new BufferedReader(new InputStreamReader(
-                    (conn.getInputStream())));
-
-            String output;
-            StringBuilder content = new StringBuilder();
-            System.out.println("Output from Server .... \n");
-            while ((output = br.readLine()) != null) {
-                content.append(output);
-            }
-
-            Gson g = new Gson();
-
-            Usuario u = g.fromJson(content.toString(), Usuario.class);
-
-            if (u != null) {
-                System.out.println(u.getNombres());
-            } else {
-                System.out.println("No parse");
-            }
-
-            conn.disconnect();
-
-        } catch (MalformedURLException e) {
-
-            e.printStackTrace();
-
-        } catch (IOException e) {
-
-            e.printStackTrace();
-
-        }
+       // Usuario u = Service.UsuarioService.getUsuario(5);
+        
+       Rol r = Service.RolService.getRol(1);
+       
+       System.out.println(r.getDescripcion());
 
     }
-
 }
