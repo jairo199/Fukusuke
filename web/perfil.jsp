@@ -195,7 +195,7 @@
 
 		<!-- Footer -->
 
-		
+	
 	<footer class="footer">
 			<div class="footer_content">
 				<div class="container">
@@ -206,8 +206,8 @@
 							<div class="footer_about">
 								<div class="footer_logo"><a href="#">FUKU<span>SUKE</span></a></div>
 								<div class="footer_text">
-									<p>Nulla aliquet bibendum sem, non placerat risus venenatis at. Prae sent vulputate bibendum dictum. Cras at vehicula urna. Suspendisse fringilla lobortis justo, ut tempor leo cursus in.</p>
-								</div>
+                                                                    <p>El restaurant de sushi Fukusuke, es una empresa dedicada a la preparación y venta de sushi en la modalidad online y años de trayectoria en su propio local.</p>
+                                                                </div>
 								<div class="social">
 									<ul class="d-flex flex-row align-items-center justify-content-start">
 										
@@ -223,7 +223,7 @@
 						<!-- Footer Column -->
 						<div class="col-xl-3 col-lg-6 footer_col">
 							<div class="footer_column">
-								<div class="footer_title">InformaciÃ³n</div>
+								<div class="footer_title">Información</div>
 								<div class="footer_info">
 									<ul>
 										<!-- Phone -->
@@ -234,7 +234,7 @@
 										<!-- Address -->
 										<li class="d-flex flex-row align-items-center justify-content-start">
 											<div><img src="images/placeholder.svg" alt=""></div>
-											<span>Direccion, Local , ConcepciÃ³n</span>
+											<span>Direccion, Local , Concepción</span>
 										</li>
 										<!-- Email -->
 										<li class="d-flex flex-row align-items-center justify-content-start">

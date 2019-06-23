@@ -187,161 +187,87 @@
 
         <!-- Footer -->
 
-        <footer class="footer">
-            <div class="footer_content">
-                <div class="container">
-                    <div class="row">
-
-                        <!-- Footer Column -->
-                        <div class="col-xl-3 col-lg-6 footer_col">
-                            <div class="footer_about">
-                                <div class="footer_logo"><a href="#">FUKU<span>SUKE</span></a></div>
-                                <div class="footer_text">
-                                    <p>Fukusuke Sushi Delivery es una empresa dedicada a crear los mejores 
-                                        sabores con los ingredientes que nos regala el oceano, los mejores Sushis
-                                        los encontraras en Fukusuke Sushi.</p>
-                                </div>
-                                <div class="social">
-                                    <ul class="d-flex flex-row align-items-center justify-content-start">
-                                        <!-- <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li> -->
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                        <!-- <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li> -->
-                                    </ul>
-                                </div>
-                                <!-- <div class="footer_submit"><a href="#">submit listing</a></div> -->
-                            </div>
-                        </div>
-
-                        <!-- Footer Column -->
-                        <div class="col-xl-3 col-lg-6 footer_col">
-                            <div class="footer_column">
-                                <div class="footer_title">Información</div>
-                                <div class="footer_info">
-                                    <ul>
-                                        <!-- Phone -->
-                                        <li class="d-flex flex-row align-items-center justify-content-start">
-                                            <div><img src="images/phone-call.svg" alt=""></div>
-                                            <span>+56 9 99022112</span>
-                                        </li>
-                                        <!-- Address -->
-                                        <li class="d-flex flex-row align-items-center justify-content-start">
-                                            <div><img src="images/placeholder.svg" alt=""></div>
-                                            <span>Tucapel, no 235, Concepción</span>
-                                        </li>
-                                        <!-- Email -->
-                                        <li class="d-flex flex-row align-items-center justify-content-start">
-                                            <div><img src="images/envelope.svg" alt=""></div>
-                                            <span>contacto@fukusuke.cl</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="footer_links usefull_links">
-                                    <div class="footer_title">Enlaces útiles</div>
-                                    <ul>
-                                        <li><a href="#">Testimonios</a></li>
-                                        <li><a href="#">Forma de comer Sushi</a></li>
-                                        <li><a href="#">Tipos de salsas</a></li>
-                                        <li><a href="#">Contacto</a></li>
-                                        <li><a href="#">Sobre nosotros</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Footer Column -->
-                        <div class="col-xl-3 col-lg-6 footer_col">
-                            <div class="footer_links">
-                                <div class="footer_title">Tipos de Sushis</div>
-                                <ul>
-                                    <li><a href="https://gosushing.com/rep/8074/1720040/203/salmon-uramakijpg.jpg">Uramaki</a></li>
-                                    <li><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDg74-9xOm2HtO00ixBrvp7sxEzB3lIco0LTjRQK89WS3fKsaa">Maki</a></li>
-                                    <li><a href="https://images.japancentre.com/recipes/pics/217/main/photo_Nigiri-Sushi.jpg?1469572964">Nigiri</a></li>
-                                    <li><a href="https://truffle-assets.imgix.net/1t1bxm43v4e3_22P8HKQ2vaCey0SaeMUoOK_temaki_landscapeThumbnail_es.jpeg">Temaki</a></li>
-                                    <li><a href="https://www.hamaalwok.cl/wp-content/uploads/2018/11/Sushi-Hama_Gohan-clasico-Hama-_105_2880x2304-2.jpg">Gohan</a></li>
-                                    <li><a href="https://cdn.pymesenlared.es/img/27/327/15455/gunkan-de-salmon.jpg">Gunkan</a></li>
-                                    <li><a href="https://okdiario.com/img/2018/12/26/receta-de-sashimi-de-atun-1-655x368.jpg">Sashimi</a></li>
-                                    <li><a href="http://imag.bonviveur.es/articulos/plato-de-hosomaki-variado.jpg">Hosomaki</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Footer Column -->
-                        <div class="col-xl-3 col-lg-6 footer_col">
-                            <div class="footer_title">Featured Property</div>
-                            <div class="listing_small">
-                                <div class="listing_small_image">
-                                    <div>
-                                        <img src="images/box.png" alt="">
-                                    </div>
-                                    <div
-                                        class="listing_small_tags d-flex flex-row align-items-start justify-content-start flex-wrap">
-                                        <div class="listing_small_tag tag_house"><a href="listings.html">house</a></div>
-                                        <div class="listing_small_tag tag_sale"><a href="listings.html">for sale</a>
-                                        </div>
-                                    </div>
-                                    <div class="listing_small_price">$ 562 346</div>
-                                </div>
-                                <div class="listing_small_content">
-                                    <div
-                                        class="listing_small_location d-flex flex-row align-items-start justify-content-start">
-                                        <img src="images/icon_1.png" alt="">
-                                        <a href="single.html">280 Doe Meadow Drive Landover, MD 20785</a>
-                                    </div>
-                                    <div class="listing_small_info">
-                                        <ul class="d-flex flex-row align-items-center justify-content-start flex-wrap">
-                                            <li class="d-flex flex-row align-items-center justify-content-start">
-                                                <img src="images/icon_3.png" alt="">
-                                                <span>2</span>
-                                            </li>
-                                            <li class="d-flex flex-row align-items-center justify-content-start">
-                                                <img src="images/icon_4.png" alt="">
-                                                <span>5</span>
-                                            </li>
-                                            <li class="d-flex flex-row align-items-center justify-content-start">
-                                                <img src="images/icon_5.png" alt="">
-                                                <span>2</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="footer_bar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <div
-                                class="footer_bar_content d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
-                                <div class="copyright order-md-1 order-2">
-                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                    Copyright &copy;
-                                    <script>document.write(new Date().getFullYear());</script> All rights reserved |
-                                    This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
-                                        href="https://colorlib.com" target="_blank">Colorlib</a>
-                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                </div>
-                                <nav class="footer_nav order-md-2 order-1 ml-md-auto">
-                                    <!-- <ul
-                                        class="d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="about.html">About us</a></li>
-                                        <li><a href="listings.html">Listings</a></li>
-                                        <li><a href="blog.html">News</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul> -->
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+	
+	<footer class="footer">
+			<div class="footer_content">
+				<div class="container">
+					<div class="row">
+						
+						<!-- Footer Column -->
+						<div class="col-xl-3 col-lg-6 footer_col">
+							<div class="footer_about">
+								<div class="footer_logo"><a href="#">FUKU<span>SUKE</span></a></div>
+								<div class="footer_text">
+                                                                    <p>El restaurant de sushi Fukusuke, es una empresa dedicada a la preparación y venta de sushi en la modalidad online y años de trayectoria en su propio local.</p>
+                                                                </div>
+								<div class="social">
+									<ul class="d-flex flex-row align-items-center justify-content-start">
+										
+										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+										
+									</ul>
+								</div>
+					
+							</div>
+						</div>
+	
+						<!-- Footer Column -->
+						<div class="col-xl-3 col-lg-6 footer_col">
+							<div class="footer_column">
+								<div class="footer_title">Información</div>
+								<div class="footer_info">
+									<ul>
+										<!-- Phone -->
+										<li class="d-flex flex-row align-items-center justify-content-start">
+											<div><img src="images/phone-call.svg" alt=""></div>
+											<span>+569 555 555 55</span>
+										</li>
+										<!-- Address -->
+										<li class="d-flex flex-row align-items-center justify-content-start">
+											<div><img src="images/placeholder.svg" alt=""></div>
+											<span>Direccion, Local , Concepción</span>
+										</li>
+										<!-- Email -->
+										<li class="d-flex flex-row align-items-center justify-content-start">
+											<div><img src="images/envelope.svg" alt=""></div>
+											<span>contacto@fukusuke.cl
+											</span>
+										</li>
+									</ul>
+								</div>
+								
+							</div>
+						</div>
+	
+	
+					
+	
+					</div>
+				</div>
+			</div>
+			<div class="footer_bar">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="footer_bar_content d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
+								<div class="copyright order-md-1 order-2"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+	Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Fukusuke 2019
+	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+								<nav class="footer_nav order-md-2 order-1 ml-md-auto">
+									<ul class="d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
+										<li><a href="index.html">Home</a></li>
+										<li><a href="nosotros.html">Nosotros</a></li>
+										<li><a href="Productos.html">Productos</a></li>									
+										<li><a href="contacto.html">Contacto</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
     </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>
