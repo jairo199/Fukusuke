@@ -1412,19 +1412,14 @@ exists or setup the property manually. For example like this:
         <webproject1:nbjpdareload dir="${build.test.classes.dir}"/>
     </target>
     <target depends="init,-pre-debug-fix,-do-debug-fix-test" if="netbeans.home" name="debug-fix-test"/>
-    <!--
-                
-                CLEANUP SECTION
-            -->
+    <!--CLEANUP SECTION-->
     <target depends="init" name="deps-clean" unless="no.deps"/>
     <target depends="init" name="do-clean">
         <condition property="build.dir.to.clean" value="${build.web.dir}">
             <isset property="dist.ear.dir"/>
         </condition>
         <property name="build.dir.to.clean" value="${build.web.dir}"/>
-        <delete includeEmptyDirs="true" quiet="true">
-            <fileset dir="${build.dir.to.clean}/WEB-INF/lib"/>
-        </delete>
+
         <delete dir="${build.dir}"/>
         <available file="${build.dir.to.clean}/WEB-INF/lib" property="status.clean-failed" type="dir"/>
         <delete dir="${dist.dir}"/>

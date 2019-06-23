@@ -16,16 +16,18 @@ public class Producto {
     private String Url_photo;
     private int Precio;
     private int Cantidad_disponible;
+    private String Estado;
 
     public Producto() {
     }
 
-    public Producto(int Codigo_producto, String Descripcion, String Url_photo, int Precio, int Cantidad_disponible) {
+    public Producto(int Codigo_producto, String Descripcion, String Url_photo, int Precio, int Cantidad_disponible,String Estado) {
         this.Codigo_producto = Codigo_producto;
         this.Descripcion = Descripcion;
         this.Url_photo = Url_photo;
         this.Precio = Precio;
         this.Cantidad_disponible = Cantidad_disponible;
+        this.Estado = Estado;
     }
 
     public int getCodigo_producto() {
@@ -67,5 +69,12 @@ public class Producto {
     public void setCantidad_disponible(int Cantidad_disponible) {
         this.Cantidad_disponible = Cantidad_disponible;
     }
+    
+    public String getEstado() {
+        return Estado;
+    }
 
+    public void setEstado(String Estado) {
+        this.Estado = Estado;
+    }
 }

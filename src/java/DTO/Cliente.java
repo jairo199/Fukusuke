@@ -5,6 +5,7 @@
  */
 package DTO;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -13,7 +14,7 @@ import java.util.Date;
  */
 public class Cliente {
 
-    private int run;
+    private String Run;
     private String Nombre_completo;
     private String Email;
     private String Telefono;
@@ -29,8 +30,8 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(int run, String Nombre_completo, String Email, String Telefono, String Sexo, Date Fecha_nacimiento, String Direccion, String Comuna, String Provincia, String Region, String Contrasena, String Codigo_confirmacion) {
-        this.run = run;
+    public Cliente(String Run, String Nombre_completo, String Email, String Telefono, String Sexo, Date Fecha_nacimiento, String Direccion, String Comuna, String Provincia, String Region, String Contrasena, String Codigo_confirmacion) {
+        this.Run = Run;
         this.Nombre_completo = Nombre_completo;
         this.Email = Email;
         this.Telefono = Telefono;
@@ -44,12 +45,12 @@ public class Cliente {
         this.Codigo_confirmacion = Codigo_confirmacion;
     }
 
-    public int getRun() {
-        return run;
+    public String getRun() {
+        return Run;
     }
 
-    public void setRun(int run) {
-        this.run = run;
+    public void setRun(String Run) {
+        this.Run = Run;
     }
 
     public String getNombre_completo() {
