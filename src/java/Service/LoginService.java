@@ -35,7 +35,7 @@ public class LoginService {
             
            
             
-            URL url = new URL(ClienteService.url + Rut);
+            URL url = new URL(LoginService.url + Rut);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
@@ -78,18 +78,21 @@ public class LoginService {
     }
     
          
-    public static boolean postUsuario(Login login){
+    
+    
+    
+     public static boolean putUsuario(Usuario usuario){
           try {
 
             URL url = new URL(Service.LoginService.url);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setDoOutput(true);
-            conn.setRequestMethod("POST");
+            conn.setRequestMethod("PUT");
             conn.setRequestProperty("Content-Type", "application/json");
   
             Gson g = new Gson();
             
-            String input = g.toJson(login);
+            String input = g.toJson(usuario);
 
             OutputStream os = conn.getOutputStream();
             os.write(input.getBytes());
@@ -123,20 +126,19 @@ public class LoginService {
 
         }
     }
-    
-    
-     public static boolean putUsuario(Usuario usuario){
-          try {
+
+    public static boolean postLoginCliente(Login l) {
+         try {
 
             URL url = new URL(Service.LoginService.url);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setDoOutput(true);
-            conn.setRequestMethod("PUT");
+            conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json");
   
             Gson g = new Gson();
             
-            String input = g.toJson(usuario);
+            String input = g.toJson(l);
 
             OutputStream os = conn.getOutputStream();
             os.write(input.getBytes());
@@ -149,11 +151,11 @@ public class LoginService {
             BufferedReader br = new BufferedReader(new InputStreamReader(
                     (conn.getInputStream())));
 
-            String output;
-            System.out.println("Output from Server .... \n");
-            while ((output = br.readLine()) != null) {
-                System.out.println(output);
-            }
+//            String output;
+//            System.out.println("Output from Server .... \n");
+//            while ((output = br.readLine()) != null) {
+//                System.out.println(output);
+//            }
 
             conn.disconnect();
             return true;

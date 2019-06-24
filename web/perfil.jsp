@@ -137,7 +137,7 @@
                                     <ul>
                                         <li><a href="#" class="text-success text-center">Mis Datos</a></li>
                                         <li><a href="mispedidos.html" class="">Mis Pedidos</a></li>
-                                        <li><form action="<c:url value="/LoginController"/>" method="post"><input type="submit" value="Cerrar SesiÃ³n" name="btn_salir" id="btn_salir" class="btn btn-danger"/></form></li>
+                                        <li><form action="<c:url value="/LoginController"/>" method="post"><input type="submit" value="Cerrar Sesión" name="btn_salir" id="btn_salir" class="btn btn-danger"/></form></li>
                                     </ul>
                                 </div>
                             </div>
@@ -153,18 +153,39 @@
                                 <table class="table table-hover">
                                     <tbody>
                                         <tr>
-                                            <td>Email </td>
-                                            <td>Usuario@gmail.com</td>
+                                            <td>RUT:</td>
+                                            <td><c:out value="${rut}"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Nombre:</td>
+                                            <td><c:out value="${nombre}"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email:</td>
+                                            <td><c:out value="${email}"/></td>
 
                                         </tr>
                                         <tr>
-                                            <td>Nombre </td>
-                                            <td>usuario</td>
+                                            <td>Telefono:</td>
+                                            <td><c:out value="${telefono}"/></td>
+
                                         </tr>
                                         <tr>
-                                            <td>DirecciÃÂ³n</td>
-                                            <td>Casa de usuario</td>
+                                            <td>Genero:</td>
+                                            <td><c:out value="${sexo}"/></td>
+
                                         </tr>
+                                        <tr>
+                                            <td>Fecha Nacimiento:</td>
+                                            <td><c:out value="${fechana}"/></td>
+
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>Dirección</td>
+                                            <td><c:out value="${direccion}"/></td>
+                                        </tr>
+                                        
                                     </tbody>
                                 </table>
                             </div>

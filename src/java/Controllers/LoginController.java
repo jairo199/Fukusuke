@@ -6,7 +6,9 @@
 package Controllers;
 
 import DTO.Cliente;
+import DTO.Login;
 import Service.ClienteService;
+import Service.LoginService;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -78,8 +80,9 @@ public class LoginController extends HttpServlet {
                 listaFail.add("RUT invalido.");
             }
             
+            ClienteService cli = new ClienteService();
             if (valRut==true) {
-                ClienteService cli = new ClienteService();
+                
                 String dv;
                 if (rut.length()==9) {
                      dv = rut.substring(8,9);
@@ -87,6 +90,7 @@ public class LoginController extends HttpServlet {
                      rut=rut.substring(0,8);
                      rut=rut+dv;
                 }
+                Login l = new Login(rut,password);
                 if (cli.getCliente(rut)== null) {
                     esValido = false;
                     listaFail.add("usuario no registrado");
@@ -94,17 +98,13 @@ public class LoginController extends HttpServlet {
                 
                 
                 
-                (cli.getCliente(rut).getContrasena()!= password)
+                if(!LoginService.postLoginCliente(l))
                 {
                     esValido = false;
-                    listaFail.add("Contraseña Incorrecta"+cli.getCliente(rut).getContrasena()+ " " + password);
+                    listaFail.add("Contraseña Incorrecta");
                 }
             }
-            
-            
-            
-            
-            
+                        
             if (!esValido) {
 
                 request.setAttribute("listaErrores", listaFail);
@@ -112,10 +112,20 @@ public class LoginController extends HttpServlet {
             }
 
             if (esValido) {
-                request.getRequestDispatcher("perfil.jsp").forward(request, response);
+                
                 if (Session.getAttribute("SessionUsuario") == null) {
-                    Session.setAttribute("SessionUsuario", request.getParameter(rut));
+                    Session.setAttribute("SessionUsuario", cli.getCliente(rut).getNombre_completo());
                 }
+                request.setAttribute("email", cli.getCliente(rut).getEmail());
+                
+                request.setAttribute("nombre", cli.getCliente(rut).getNombre_completo());
+                request.setAttribute("rut", cli.getCliente(rut).getRun());
+                request.setAttribute("telefono", cli.getCliente(rut).getTelefono());
+                request.setAttribute("sexo", cli.getCliente(rut).getSexo());
+                request.setAttribute("fechana", cli.getCliente(rut).getFecha_nacimiento());
+                request.setAttribute("direccion", cli.getCliente(rut).getDireccion()+", "+cli.getCliente(rut).getRegion()+", "+cli.getCliente(rut).getProvincia()+", "+cli.getCliente(rut).getComuna());
+                request.getRequestDispatcher("perfil.jsp").forward(request, response);
+                
             }
         }
 
