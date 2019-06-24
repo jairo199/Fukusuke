@@ -60,22 +60,14 @@ public class LoginController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        
+
         HttpSession Session = request.getSession();//ATRIBUTO SESSION
-        
+
         //SI LA SESSION ES NULA SE DIRIGE A LOGIN 
         if (Session.getAttribute("SessionUsuario") == null) {
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
-        //SI SE CIERRA LA SESSION SE DIRIGE A INDEX
-        if (request.getParameter("btn_salir") != null) {
-            //request.getSession().removeAttribute("SessionUsuario");
-            
-            request.getRequestDispatcher("/FukusukeController").forward(request, response);
-            
-            return;
-            
-        }
+
         //SI LA SESSION ESTA INICIADA, POR DEFAUL VA A PERFIL  
         request.getRequestDispatcher("perfil.jsp").forward(request, response);
 
@@ -100,26 +92,37 @@ public class LoginController extends HttpServlet {
         ArrayList<String> listaFail = new ArrayList<String>();
         boolean esValido = true;
 
-        if (request.getParameter("email").trim().isEmpty()) {
-            esValido = false;
-            listaFail.add("Debes ingresar tu usuario.");
-        }
-        if (request.getParameter("password").trim().isEmpty()) {
-            esValido = false;
-            listaFail.add("Debes ingresar tu contraseña.");
-        }
-
-        if (!esValido) {
-
-            request.setAttribute("listaErrores", listaFail);
-            request.getRequestDispatcher("login.jsp").forward(request, response);
-        }
-
-        if (esValido) {
-            request.getRequestDispatcher("perfil.jsp").forward(request, response);
-            if (Session.getAttribute("SessionUsuario") == null) {
-                Session.setAttribute("SessionUsuario", request.getParameter("email"));
+        if (request.getParameter("btn_login") != null) {
+            if (request.getParameter("email").trim().isEmpty()) {
+                esValido = false;
+                listaFail.add("Debes ingresar tu usuario.");
             }
+            if (request.getParameter("password").trim().isEmpty()) {
+                esValido = false;
+                listaFail.add("Debes ingresar tu contraseña.");
+            }
+
+            if (!esValido) {
+
+                request.setAttribute("listaErrores", listaFail);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            }
+
+            if (esValido) {
+                request.getRequestDispatcher("perfil.jsp").forward(request, response);
+                if (Session.getAttribute("SessionUsuario") == null) {
+                    Session.setAttribute("SessionUsuario", request.getParameter("email"));
+                }
+            }
+        }
+
+        //SI SE CIERRA LA SESSION SE DIRIGE A INDEX
+        if (request.getParameter("btn_salir") != null) {
+
+            request.getSession().removeAttribute("SessionUsuario");
+
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+
         }
         request.getRequestDispatcher("login.jsp").forward(request, response);
 

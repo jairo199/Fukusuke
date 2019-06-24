@@ -39,7 +39,7 @@
                             <!-- Address -->
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div><img src="images/placeholder.svg" alt=""></div>
-                                <span>Direccion, Local , ConcepciÃ³n</span>
+                                <span>Direccion, Local , ConcepciÃÂ³n</span>
                             </li>
                             <!-- Email -->
                             <li class="d-flex flex-row align-items-center justify-content-start">
@@ -137,7 +137,7 @@
                                     <ul>
                                         <li><a href="#" class="text-success text-center">Mis Datos</a></li>
                                         <li><a href="mispedidos.html" class="">Mis Pedidos</a></li>
-                                        <li><form action="<c:url value="/LoginController"/>" method="post"><input type="submit" value="Cerrar Sesión" name="btn_salir" id="btn_salir" class="btn btn-danger"></form></li>
+                                        <li><form action="<c:url value="/LoginController"/>" method="post"><input type="submit" value="Cerrar SesiÃ³n" name="btn_salir" id="btn_salir" class="btn btn-danger"/></form></li>
                                     </ul>
                                 </div>
                             </div>
@@ -162,7 +162,7 @@
                                             <td>usuario</td>
                                         </tr>
                                         <tr>
-                                            <td>DirecciÃ³n</td>
+                                            <td>DirecciÃÂ³n</td>
                                             <td>Casa de usuario</td>
                                         </tr>
                                     </tbody>
