@@ -16,6 +16,10 @@
         <div class="super_container">
             <div class="super_overlay"></div>
 
+            
+            <jsp:include page="navbar/ModalIngreso.jsp" />
+            
+            
             <!-- Header -->
             <header class="header">
                 <!-- Header Bar -->

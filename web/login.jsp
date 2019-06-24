@@ -58,7 +58,7 @@
                         <div class="log_reg d-flex flex-row align-items-center justify-content-start">
                             <ul class="d-flex flex-row align-items-start justify-content-start">
 
-                                <li><a data-toggle="modal" href="#modalLogin">Ingresar</a></li>
+                                <li></li>
                                 <li><a data-toggle="modal" href="#modalRegisto">Registro</a></li>
 
 
@@ -135,8 +135,8 @@
                             <div class="">
                                 <form method="post" action="<c:url value="/LoginController"/>">
                                     <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese email">			    
+                                        <label for="rut">RUT</label>
+                                        <input type="rut" class="form-control" id="rut" name="rut"  placeholder="Ingrese RUT sin puntos y con guion">			    
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Contraseña</label>

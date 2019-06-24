@@ -22,7 +22,7 @@
                 <div class="modal-body">
                             <div class="form-group">
                               <label for="rut">RUT</label>
-                              <input type="rut" class="form-control" id="rut" name="rut" aria-describedby="emailHelp" placeholder="Ingrese RUT sin puntos y con guion">			    
+                              <input type="rut" class="form-control" id="rut" name="rut"  placeholder="Ingrese RUT sin puntos y con guion">			    
                             </div>
                             <div class="form-group">
                               <label for="password">Contraseña</label>
@@ -30,13 +30,10 @@
                             </div>	
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>   
-                    <input type="submit" id="btn_login" name="btn_login" class="btn btn-success btn-block" value="Ingresar" >
+                    <button type="button" class="btn btn-warning btn-secondary btn-block" data-dismiss="modal">Cerrar</button>   
+                    <input type="submit" id="btn_login" name="btn_login" class="btn btn-info btn-block" value="Ingresar" >
                 </div>
 	      </form>
-                <c:forEach var="Error" items="${listaErrores}">
-                    <h3 class="alert alert-warning text-center"><c:out  value="${Error}"></c:out></h3>
-                </c:forEach> 
 	    </div>
 	  </div>
 	</div>

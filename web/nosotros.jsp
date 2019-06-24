@@ -19,39 +19,7 @@
 <div class="super_container">
 	<div class="super_overlay"></div>
 
-	<!-- Modal Login-->
-	<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-		  <div class="modal-content">
-			<div class="modal-header">
-			  <h5 class="modal-title" id="exampleModalLabel">Ingresar</h5>
-			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			  </button>
-			</div>
-			<div class="modal-body">
-			  <form method="post" action="#">
-				<div class="form-group">
-				  <label for="email">RUT</label>
-				  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingrese RUT sin puntos y con guion">			    
-				</div>
-				<div class="form-group">
-				  <label for="password">Contraseña</label>
-				  <input type="password" class="form-control" id="password" placeholder="Ingrese contraseÃ±a">
-				</div>			  			  
-			  
-  
-			</div>
-			<div class="modal-footer">
-			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-			  <button type="submit" href="ventas.html" class="btn btn-success">Ingresar</button>
-			</div>
-  
-			</form>
-  
-		  </div>
-		</div>
-	  </div>
+	<jsp:include page="navbar/ModalIngreso.jsp" />
   
 	  <!-- Modal Registro -->
 	  <div class="modal fade" id="modalRegisto" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
