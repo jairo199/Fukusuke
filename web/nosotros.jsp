@@ -188,12 +188,7 @@
 		<div class="header_content d-flex flex-row align-items-center justify-content-start">
 			<div class="logo"><a href="index.html">FUKU<span>SUKE</span></a></div>
 			<nav class="main_nav">
-				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li><a href="index.html">Inicio</a></li>
-					<li class="active"><a href="nosotros.html">Nosotros</a></li>
-					<li><a href="Productos.html">Productos</a></li>				
-					<li><a href="contacto.html">Contacto</a></li>
-				</ul>
+				<jsp:include page="navbar/MenuPrincipal.jsp" />
 			</nav>
 			<div class="submit ml-auto"><a href="index.html">Mi carrito (0)</a></div>
             <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
