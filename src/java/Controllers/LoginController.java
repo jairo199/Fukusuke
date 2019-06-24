@@ -62,14 +62,12 @@ public class LoginController extends HttpServlet {
             String rut = request.getParameter("run_registro");
             String codigo = request.getParameter("txt_codigo");
             
-            //Cliente c = Service.LoginService.getLogin(rut, codigo);
-            //listaFail.add(c.getRun());
+            String respuesta = Service.LoginService.getLogin(rut, codigo);
+            listaFail.add(respuesta);
             
             request.setAttribute("listaErrores", listaFail);
             request.getRequestDispatcher("login.jsp").forward(request, response);
-            
-                    
-            
+                                        
         }
         
         

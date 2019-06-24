@@ -49,9 +49,8 @@ public class main {
 //          Cliente c = Service.ClienteService.getCliente("19677005-4");
 //          System.out.println(c.getContrasena());
           
-
-            Login l = new Login("","1234");
-            System.out.println(LoginService.postUsuario(l));
+            System.out.println(Service.LoginService.getLogin("121212", "482053"));
+            
     }
 
 }

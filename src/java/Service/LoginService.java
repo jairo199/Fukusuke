@@ -31,21 +31,27 @@ public class LoginService {
 
     public static String getLogin(String Run, String Codigo) {
         try {
-
-            URL url = new URL(LoginService.url + "?" + Run + "codigo=" + Codigo);
+            
+            
+            String aa;
+            
+            URL url = new URL(LoginService.url + "?Run="+Run+ "&codigo=" + Codigo);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
-
+            
+            aa = url+"";
+            
             if (conn.getResponseCode() != 200) {
 
-                return null;
+                return "Codigo Erroneo";
             }
 
             BufferedReader br = new BufferedReader(new InputStreamReader(
                     (conn.getInputStream())));
-
+            
             String output;
+            
 
             StringBuilder content = new StringBuilder();
 
