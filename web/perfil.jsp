@@ -19,6 +19,11 @@
     </head>
 
     <body>
+        
+        
+        <jsp:include page="navbar/ModalIngreso.jsp" />
+
+         <jsp:include page="navbar/ModalRegistro.jsp" />
 
         <div class="super_container">
             <div class="super_overlay"></div>

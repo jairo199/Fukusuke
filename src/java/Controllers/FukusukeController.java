@@ -152,7 +152,7 @@ public class FukusukeController extends HttpServlet {
                 if (!Service.ClienteService.postCliente(cliente)) {
                     
                     request.setAttribute("listaErrores", listaFail);
-                    request.getRequestDispatcher("validarEmail.jsp").forward(request, response);
+                    request.getRequestDispatcher("registrarcliente.jsp").forward(request, response);
                 }else{
                     Service.ClienteService.postCliente(cliente);
                     request.setAttribute("Cliente", cliente);
@@ -164,7 +164,14 @@ public class FukusukeController extends HttpServlet {
             }else{
                     
                 request.setAttribute("listaErrores", listaFail);
-                request.getRequestDispatcher("validarEmail.jsp").forward(request, response);
+                request.setAttribute("rut", rut);
+                request.setAttribute("nombre",request.getParameter("txt_nombre"));
+                request.setAttribute("telefono", request.getParameter("txt_telefono"));
+                request.setAttribute("email",request.getParameter("email"));
+                request.setAttribute("direc",request.getParameter("txt_dir"));
+                request.setAttribute("pass",request.getParameter("txt_pass"));
+                
+                request.getRequestDispatcher("registrarcliente.jsp").forward(request, response);
             }
         }
 
