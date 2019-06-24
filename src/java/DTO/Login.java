@@ -11,22 +11,22 @@ package DTO;
  */
 public class Login {
     
-    private int IdUser;
+    private String IdUser;
     private String Password;
 
     public Login() {
     }
 
-    public Login(int IdUser, String Password) {
+    public Login(String IdUser, String Password) {
         this.IdUser = IdUser;
         this.Password = Password;
     }
 
-    public int getIdUser() {
+    public String getIdUser() {
         return IdUser;
     }
 
-    public void setIdUser(int IdUser) {
+    public void setIdUser(String IdUser) {
         this.IdUser = IdUser;
     }
 

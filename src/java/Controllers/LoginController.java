@@ -5,6 +5,9 @@
  */
 package Controllers;
 
+import DTO.Cliente;
+import Service.ClienteService;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -22,40 +25,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "LoginController", urlPatterns = {"/LoginController"})
 public class LoginController extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-//    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
-//        response.setContentType("text/html;charset=UTF-8");
-//        try (PrintWriter out = response.getWriter()) {
-//            /* TODO output your page here. You may use following sample code. */
-//            out.println("<!DOCTYPE html>");
-//            out.println("<html>");
-//            out.println("<head>");
-//            out.println("<title>Servlet LoginController</title>");            
-//            out.println("</head>");
-//            out.println("<body>");
-//            out.println("<h1>Servlet LoginController at " + request.getContextPath() + "</h1>");
-//            out.println("</body>");
-//            out.println("</html>");
-//        }
-//    }
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+   
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -73,14 +43,7 @@ public class LoginController extends HttpServlet {
 
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+   
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -93,15 +56,55 @@ public class LoginController extends HttpServlet {
         boolean esValido = true;
 
         if (request.getParameter("btn_login") != null) {
-            if (request.getParameter("email").trim().isEmpty()) {
+            String rut = request.getParameter("rut");
+            String password = request.getParameter("password");
+            
+            boolean valRut = false;
+            
+            if (request.getParameter("rut").isEmpty()) {
                 esValido = false;
-                listaFail.add("Debes ingresar tu usuario.");
+                
+                listaFail.add("Debes ingresar tu RUT.");
+            }else{
+                valRut=true;
             }
             if (request.getParameter("password").trim().isEmpty()) {
                 esValido = false;
                 listaFail.add("Debes ingresar tu contraseña.");
             }
-
+            //pregunta si el rut es valido
+            if (!Cliente.validarRut(rut)) {
+                esValido = false;
+                listaFail.add("RUT invalido.");
+            }
+            
+            if (valRut==true) {
+                ClienteService cli = new ClienteService();
+                String dv;
+                if (rut.length()==9) {
+                     dv = rut.substring(8,9);
+                     dv="-"+dv;
+                     rut=rut.substring(0,8);
+                     rut=rut+dv;
+                }
+                if (cli.getCliente(rut)== null) {
+                    esValido = false;
+                    listaFail.add("usuario no registrado");
+                }
+                
+                
+                
+                (cli.getCliente(rut).getContrasena()!= password)
+                {
+                    esValido = false;
+                    listaFail.add("Contraseña Incorrecta"+cli.getCliente(rut).getContrasena()+ " " + password);
+                }
+            }
+            
+            
+            
+            
+            
             if (!esValido) {
 
                 request.setAttribute("listaErrores", listaFail);
@@ -111,7 +114,7 @@ public class LoginController extends HttpServlet {
             if (esValido) {
                 request.getRequestDispatcher("perfil.jsp").forward(request, response);
                 if (Session.getAttribute("SessionUsuario") == null) {
-                    Session.setAttribute("SessionUsuario", request.getParameter("email"));
+                    Session.setAttribute("SessionUsuario", request.getParameter(rut));
                 }
             }
         }
@@ -128,11 +131,7 @@ public class LoginController extends HttpServlet {
 
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+    
     @Override
     public String getServletInfo() {
         return "Login Fukusuke";

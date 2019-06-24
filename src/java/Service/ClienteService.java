@@ -27,17 +27,20 @@ public class ClienteService {
 
     public static Cliente getCliente(String Rut) {
         try {
-
+            
+           
+            
             URL url = new URL(ClienteService.url + Rut);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
 
             if (conn.getResponseCode() != 200) {
-                throw new RuntimeException("Failed : HTTP error code : "
-                        + conn.getResponseCode());
-            }
-
+                
+                return null;
+            }          
+            
+            
             BufferedReader br = new BufferedReader(new InputStreamReader(
                     (conn.getInputStream())));
 
