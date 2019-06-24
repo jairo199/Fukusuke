@@ -34,7 +34,7 @@
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	        <form method="post" action="<c:url value="/FukusukeController"/>">
+	        <form method="post" action="<c:url value="/LoginController"/>">
 			  <div class="form-group">
 			    <label for="email">Email</label>
 			    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingrese email">			    

@@ -2,7 +2,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
-    
+
     <head>
         <title>Ingresar</title>
         <meta charset="utf-8">
@@ -73,12 +73,7 @@
                 <div class="header_content d-flex flex-row align-items-center justify-content-start">
                     <div class="logo"><a href="#">FUKU<span>SUKE</span></a></div>
                     <nav class="main_nav">
-                        <ul class="d-flex flex-row align-items-start justify-content-start">
-                            <li class=""><a href="index.jsp">Inicio</a></li>
-                            <li><a href="nosotros.jsp">Nosotros</a></li>
-                            <li><a href="Productos.jsp">Productos</a></li>
-                            <li><a href="contacto.jsp">Contacto</a></li>
-                        </ul>
+                        <jsp:include page="navbar/MenuPrincipal.jsp" />
                     </nav>
                     <div class="submit ml-auto"><a href="index.html">Mi carrito (0)</a></div>
                     <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
@@ -135,26 +130,28 @@
                     <div class="row">					
                         <div class="col-xl-12">
                             <hr>
-                            <div class="footer_title" style="color: black;">Ingrese sus Datos</div>
-
+                            <div class="footer_title" style="color: black;">Ingrese sus Datos</div>                            
                             <br>
 
                             <div class="">
-                                <form method="post" action="<c:url value="/FukusukeController"/>">
+                                <form method="post" action="<c:url value="/LoginController"/>">
                                     <div class="form-group">
                                         <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingrese email">			    
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese email">			    
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Contraseña</label>
-                                        <input type="password" class="form-control" id="password" placeholder="Ingrese contraseña">
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese contraseña">
                                     </div>
                                     <div class="form-group">
-                                        
+
                                         <input type="submit" id="btn_login" name="btn_login" class="btn btn-success btn-block" value="Ingresar" >
                                     </div>
                                 </form>
 
+                                <c:forEach var="Error" items="${listaErrores}">
+                                    <h3 class="alert alert-warning text-center"><c:out  value="${Error}"></c:out></h3>
+                                </c:forEach> 
 
                             </div>
                             <hr>
@@ -169,87 +166,87 @@
 
             <!-- Footer -->
 
-	
-	<footer class="footer">
-			<div class="footer_content">
-				<div class="container">
-					<div class="row">
-						
-						<!-- Footer Column -->
-						<div class="col-xl-3 col-lg-6 footer_col">
-							<div class="footer_about">
-								<div class="footer_logo"><a href="#">FUKU<span>SUKE</span></a></div>
-								<div class="footer_text">
-                                                                    <p>El restaurant de sushi Fukusuke, es una empresa dedicada a la preparación y venta de sushi en la modalidad online y años de trayectoria en su propio local.</p>
-                                                                </div>
-								<div class="social">
-									<ul class="d-flex flex-row align-items-center justify-content-start">
-										
-										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-										
-									</ul>
-								</div>
-					
-							</div>
-						</div>
-	
-						<!-- Footer Column -->
-						<div class="col-xl-3 col-lg-6 footer_col">
-							<div class="footer_column">
-								<div class="footer_title">Información</div>
-								<div class="footer_info">
-									<ul>
-										<!-- Phone -->
-										<li class="d-flex flex-row align-items-center justify-content-start">
-											<div><img src="images/phone-call.svg" alt=""></div>
-											<span>+569 555 555 55</span>
-										</li>
-										<!-- Address -->
-										<li class="d-flex flex-row align-items-center justify-content-start">
-											<div><img src="images/placeholder.svg" alt=""></div>
-											<span>Direccion, Local , Concepción</span>
-										</li>
-										<!-- Email -->
-										<li class="d-flex flex-row align-items-center justify-content-start">
-											<div><img src="images/envelope.svg" alt=""></div>
-											<span>contacto@fukusuke.cl
-											</span>
-										</li>
-									</ul>
-								</div>
-								
-							</div>
-						</div>
-	
-	
-					
-	
-					</div>
-				</div>
-			</div>
-			<div class="footer_bar">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="footer_bar_content d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
-								<div class="copyright order-md-1 order-2"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-	Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Fukusuke 2019
-	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
-								<nav class="footer_nav order-md-2 order-1 ml-md-auto">
-									<ul class="d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
-										<li><a href="index.html">Home</a></li>
-										<li><a href="nosotros.html">Nosotros</a></li>
-										<li><a href="Productos.html">Productos</a></li>									
-										<li><a href="contacto.html">Contacto</a></li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
+
+            <footer class="footer">
+                <div class="footer_content">
+                    <div class="container">
+                        <div class="row">
+
+                            <!-- Footer Column -->
+                            <div class="col-xl-3 col-lg-6 footer_col">
+                                <div class="footer_about">
+                                    <div class="footer_logo"><a href="#">FUKU<span>SUKE</span></a></div>
+                                    <div class="footer_text">
+                                        <p>El restaurant de sushi Fukusuke, es una empresa dedicada a la preparación y venta de sushi en la modalidad online y años de trayectoria en su propio local.</p>
+                                    </div>
+                                    <div class="social">
+                                        <ul class="d-flex flex-row align-items-center justify-content-start">
+
+                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Footer Column -->
+                            <div class="col-xl-3 col-lg-6 footer_col">
+                                <div class="footer_column">
+                                    <div class="footer_title">Información</div>
+                                    <div class="footer_info">
+                                        <ul>
+                                            <!-- Phone -->
+                                            <li class="d-flex flex-row align-items-center justify-content-start">
+                                                <div><img src="images/phone-call.svg" alt=""></div>
+                                                <span>+569 555 555 55</span>
+                                            </li>
+                                            <!-- Address -->
+                                            <li class="d-flex flex-row align-items-center justify-content-start">
+                                                <div><img src="images/placeholder.svg" alt=""></div>
+                                                <span>Direccion, Local , Concepción</span>
+                                            </li>
+                                            <!-- Email -->
+                                            <li class="d-flex flex-row align-items-center justify-content-start">
+                                                <div><img src="images/envelope.svg" alt=""></div>
+                                                <span>contacto@fukusuke.cl
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="footer_bar_content d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
+                                    <div class="copyright order-md-1 order-2"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Fukusuke 2019
+                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+                                    <nav class="footer_nav order-md-2 order-1 ml-md-auto">
+                                        <ul class="d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="nosotros.html">Nosotros</a></li>
+                                            <li><a href="Productos.html">Productos</a></li>									
+                                            <li><a href="contacto.html">Contacto</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
 
         <script src="js/jquery-3.3.1.min.js"></script>
