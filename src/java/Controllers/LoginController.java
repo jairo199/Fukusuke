@@ -62,9 +62,21 @@ public class LoginController extends HttpServlet {
         //processRequest(request, response);
         
         HttpSession Session = request.getSession();//ATRIBUTO SESSION
+        
+        //SI LA SESSION ES NULA SE DIRIGE A LOGIN 
         if (Session.getAttribute("SessionUsuario") == null) {
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
+        //SI SE CIERRA LA SESSION SE DIRIGE A INDEX
+        if (request.getParameter("btn_salir") != null) {
+            //request.getSession().removeAttribute("SessionUsuario");
+            
+            request.getRequestDispatcher("/FukusukeController").forward(request, response);
+            
+            return;
+            
+        }
+        //SI LA SESSION ESTA INICIADA, POR DEFAUL VA A PERFIL  
         request.getRequestDispatcher("perfil.jsp").forward(request, response);
 
     }
