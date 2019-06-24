@@ -37,7 +37,7 @@
                             <!-- Address -->
                             <li class="d-flex flex-row align-items-center justify-content-start">
                                 <div><img src="images/placeholder.svg" alt=""></div>
-                                <span>Direccion, Local , Concepción</span>
+                                <span>Dirección, Local , Concepción</span>
                             </li>
                             <!-- Email -->
                             <li class="d-flex flex-row align-items-center justify-content-start">
@@ -137,8 +137,10 @@
                                             <div class="search_inputs d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
                                                 <input type="text" class="search_input" placeholder="Producto..." required="required">
                                                 <select class="search_input" id="cb_categoria">
-                                                    <option>Categoria A</option>
-                                                    <option>Categoria B</option>			      
+                                                    <option>Bebidas</option>
+                                                    <option>Promociones</option>
+                                                    <option>Handroll</option>
+                                                    
                                                 </select>
 
                                                 <div></div>
@@ -180,7 +182,7 @@
                                                     <div class="tag tag_house"><a href="listings.html">Categoria...</a></div>
 
                                                 </div>
-                                                <div class="tag_price listing_price"><c:out value="${Producto.precio}"/></div>
+                                                <div class="tag_price listing_price">$<c:out value="${Producto.precio}"/></div>
                                             </div>
                                             <div class="listing_content">
                                                 <div class="prop_location listing_location d-flex flex-row align-items-start justify-content-start">
@@ -223,7 +225,7 @@
                                 <div class="footer_about">
                                     <div class="footer_logo"><a href="#">FUKU<span>SUKE</span></a></div>
                                     <div class="footer_text">
-                                        <p>El restaurant de sushi Fukusuke, es una empresa dedicada a la preparación y venta de sushi en la modalidad online y años de trayectoria en su propio local.</p>
+                                        <p>El restaurant de sushi Fukusuke, es una empresa dedicada a la preparaciÃ³n y venta de sushi en la modalidad online y aÃ±os de trayectoria en su propio local.</p>
                                     </div>
                                     <div class="social">
                                         <ul class="d-flex flex-row align-items-center justify-content-start">

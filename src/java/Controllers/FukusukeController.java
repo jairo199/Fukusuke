@@ -50,7 +50,7 @@ public class FukusukeController extends HttpServlet {
             request.getRequestDispatcher("index.jsp").forward(request, response);                   
         }
         if (request.getParameter("nav_nosotros") != null) {            
-            request.getRequestDispatcher("Nosotros.jsp").forward(request, response);                   
+            request.getRequestDispatcher("nosotros.jsp").forward(request, response);                   
         }
         if (request.getParameter("nav_productos") != null) { 
             
