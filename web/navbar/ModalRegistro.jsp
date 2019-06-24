@@ -24,7 +24,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="nombre">Run</label>
+                                    <label for="nombre">RUT</label>
                                     <input type="text" class="form-control" id="txt_run" name="txt_run" placeholder="Ingrese rut sin puntus y con guión." required maxlength="10">			    
                                 </div>
                             </div>

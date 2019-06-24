@@ -74,37 +74,98 @@ public class FukusukeController extends HttpServlet {
 
             SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
             Date fecha = null;
-
+            boolean esValido2 = false; 
             try {
                 fecha = formatoFecha.parse(request.getParameter("txt_fn"));
 
             } catch (Exception e) {
                 listaFail.add("Error Fecha");
+                esValido2 = false;
             }
-
-            Cliente cliente = new Cliente();
-
-            cliente.setRun(request.getParameter("txt_run").toString());
-            cliente.setNombre_completo(request.getParameter("txt_nombre").toString());
-            cliente.setSexo(request.getParameter("txt_sexo").toString());
-            cliente.setFecha_nacimiento(fecha.toString());
-            cliente.setTelefono(request.getParameter("txt_telefono").toString());
-            cliente.setEmail(request.getParameter("email").toString());
-            cliente.setDireccion(request.getParameter("txt_dir").toString());
-            cliente.setRegion(request.getParameter("txt_region").toString());
-            cliente.setProvincia(request.getParameter("txt_provincia").toString());
-            cliente.setComuna(request.getParameter("txt_comuna").toString());
-
-            cliente.setCodigo_confirmacion("");
-            cliente.setContrasena(request.getParameter("txt_pass").toString());
-            cliente.setEstado("0");
-
-            Service.ClienteService.postCliente(cliente);
-
-            request.setAttribute("Cliente", cliente);
+            if (request.getParameter("txt_nombre").trim().isEmpty()) {
+                listaFail.add("Debes ingresar tu nombre.");
+                esValido2 = false;
+            }
+            if (request.getParameter("email").trim().isEmpty()) {
+                listaFail.add("Debes ingresar tu email.");
+                esValido2 = false;
+            }
+            if (request.getParameter("txt_telefono").trim().isEmpty()) {
+                listaFail.add("Debes ingresar tu numero.");
+                esValido2 = false;
+            }
             
-            request.getRequestDispatcher("validarEmail.jsp").forward(request, response);
+            if (request.getParameter("txt_dir").trim().isEmpty()) {
+                listaFail.add("Debes ingresar tu direccion.");
+                esValido2 = false;
+            }
+            
+            
+            String rut = request.getParameter("txt_run").toString();
+            
+            Cliente cliente = new Cliente();
+            
+            if (!Cliente.validarRut(rut)) {
+                listaFail.add("RUT invalido.");
+                esValido2 = false;
+            }else{
+                String dv;
+                if (rut.length()==9) {
+                     dv = rut.substring(8,9);
+                     dv="-"+dv;
+                     rut=rut.substring(0,8);
+                     rut=rut+dv;
+                }else if(rut.length()==8){
+                     dv = rut.substring(7,8);
+                     dv="-"+dv;
+                     rut=rut.substring(0,7);
+                     rut=rut+dv;
+                }else{
+                    rut=rut;
+                }
+                
 
+                 esValido2 = true;
+                
+            }
+            if (esValido2) {
+                
+                
+                
+            
+
+                cliente.setRun(rut);
+                cliente.setNombre_completo(request.getParameter("txt_nombre").toString());
+                cliente.setSexo(request.getParameter("txt_sexo").toString());
+                cliente.setFecha_nacimiento(fecha.toString());
+                cliente.setTelefono(request.getParameter("txt_telefono").toString());
+                cliente.setEmail(request.getParameter("email").toString());
+                cliente.setDireccion(request.getParameter("txt_dir").toString());
+                cliente.setRegion(request.getParameter("txt_region").toString());
+                cliente.setProvincia(request.getParameter("txt_provincia").toString());
+                cliente.setComuna(request.getParameter("txt_comuna").toString());
+
+                cliente.setCodigo_confirmacion("");
+                cliente.setContrasena(request.getParameter("txt_pass").toString());
+                cliente.setEstado("0");
+                
+                if (!Service.ClienteService.postCliente(cliente)) {
+                    
+                    request.setAttribute("listaErrores", listaFail);
+                    request.getRequestDispatcher("validarEmail.jsp").forward(request, response);
+                }else{
+                    Service.ClienteService.postCliente(cliente);
+                    request.setAttribute("Cliente", cliente);
+                    request.getRequestDispatcher("validarEmail.jsp").forward(request, response);
+                }
+                    
+               
+                
+            }else{
+                    
+                request.setAttribute("listaErrores", listaFail);
+                request.getRequestDispatcher("validarEmail.jsp").forward(request, response);
+            }
         }
 
         /**

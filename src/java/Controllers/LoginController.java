@@ -103,6 +103,11 @@ public class LoginController extends HttpServlet {
                      dv="-"+dv;
                      rut=rut.substring(0,8);
                      rut=rut+dv;
+                }else if(rut.length()==8){
+                     dv = rut.substring(7,8);
+                     dv="-"+dv;
+                     rut=rut.substring(0,7);
+                     rut=rut+dv;
                 }
                 Login l = new Login(rut,password);
                 if (cli.getCliente(rut)== null) {
