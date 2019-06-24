@@ -4,7 +4,7 @@
 <html lang="es">
 
     <head>
-        <title>Ingresar</title>
+        <title>Validar Email</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="myHOME - real estate template project">
@@ -112,7 +112,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="home_content text-center">
-                                <div class="home_title">Inice Sesión</div>
+                                <div class="home_title">Inicie Sesión</div>
                             </div>
                         </div>
                     </div>
@@ -129,23 +129,20 @@
                     <div class="row">					
                         <div class="col-xl-12">
                             <hr>
-                            <div class="footer_title" style="color: black;">Ingrese sus Datos</div>                            
+                            <div class="footer_title" style="color: black;">Porfavor ingrese el código de validación: </div>                            
                             <br>
 
                             <div class="">
                                 <form method="post" action="<c:url value="/LoginController"/>">
                                     <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese email">			    
+                                        <label for="txt_codigo">Código</label>
+                                        <input type="number" class="form-control" id="txt_codigo" name="txt_codigo" placeholder="Ingrese código...">			    
                                     </div>
+                                    <input type="hidden" value="<c:out value="${Cliente.run}"/>" name="run_registro" id="run_registro">
                                     <div class="form-group">
-                                        <label for="password">Contraseña</label>
-                                        <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese contraseña">
+                                        <input type="submit" id="btn_login" name="btn_Validar" class="btn btn-success btn-block" value="Ingresar" >
                                     </div>
-                                    <div class="form-group">
 
-                                        <input type="submit" id="btn_login" name="btn_login" class="btn btn-success btn-block" value="Ingresar" >
-                                    </div>
                                 </form>
 
                                 <c:forEach var="Error" items="${listaErrores}">
@@ -154,6 +151,8 @@
 
                             </div>
                             <hr>
+
+
 
 
 

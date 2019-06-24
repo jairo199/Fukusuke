@@ -57,6 +57,22 @@ public class LoginController extends HttpServlet {
         ArrayList<String> listaFail = new ArrayList<String>();
         boolean esValido = true;
 
+        if (request.getParameter("btn_Validar") != null) {
+            
+            String rut = request.getParameter("run_registro");
+            String codigo = request.getParameter("txt_codigo");
+            
+            //Cliente c = Service.LoginService.getLogin(rut, codigo);
+            //listaFail.add(c.getRun());
+            
+            request.setAttribute("listaErrores", listaFail);
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+            
+                    
+            
+        }
+        
+        
         if (request.getParameter("btn_login") != null) {
             String rut = request.getParameter("rut");
             String password = request.getParameter("password");

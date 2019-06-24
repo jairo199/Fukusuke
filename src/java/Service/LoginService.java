@@ -9,7 +9,6 @@ package Service;
  *
  * @author kokex
  */
-
 import DTO.Cliente;
 import DTO.Login;
 import DTO.Usuario;
@@ -26,30 +25,28 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class LoginService {
-          private static String url = "http://pipedev-001-site1.ctempurl.com/api/Login";
 
-    public static Cliente getLogin(String Rut) {
+    private static String url = "http://pipedev-001-site1.ctempurl.com/api/Login";
+
+    public static String getLogin(String Run, String Codigo) {
         try {
-            
-           
-            
-            URL url = new URL(LoginService.url + Rut);
+
+            URL url = new URL(LoginService.url + "?" + Run + "codigo=" + Codigo);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
 
             if (conn.getResponseCode() != 200) {
-                
+
                 return null;
-            }          
-            
-            
+            }
+
             BufferedReader br = new BufferedReader(new InputStreamReader(
                     (conn.getInputStream())));
 
             String output;
+
             StringBuilder content = new StringBuilder();
 
             //System.out.println("Output from Server .... \n");
@@ -57,17 +54,16 @@ public class LoginService {
                 content.append(output);
             }
 
-            Gson g = new Gson();
-
-            Cliente u = g.fromJson(content.toString(), Cliente.class);
-
+//            Gson g = new Gson();
+//
+//            Cliente u = g.fromJson(content.toString(), Cliente.class);
             conn.disconnect();
-
-            if (u != null) {
-                return u;
-            } else {
-                return null;
-            }
+            return content.toString();
+//            if (u != null) {
+//                return u;
+//            } else {
+//                return null;
+//            }
 
         } catch (MalformedURLException e) {
 
@@ -76,22 +72,18 @@ public class LoginService {
             return null;
         }
     }
-    
-         
-    
-    
-    
-     public static boolean putUsuario(Usuario usuario){
-          try {
+
+    public static boolean putUsuario(Usuario usuario) {
+        try {
 
             URL url = new URL(Service.LoginService.url);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setDoOutput(true);
             conn.setRequestMethod("PUT");
             conn.setRequestProperty("Content-Type", "application/json");
-  
+
             Gson g = new Gson();
-            
+
             String input = g.toJson(usuario);
 
             OutputStream os = conn.getOutputStream();
@@ -128,16 +120,16 @@ public class LoginService {
     }
 
     public static boolean postLoginCliente(Login l) {
-         try {
+        try {
 
             URL url = new URL(Service.LoginService.url);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setDoOutput(true);
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json");
-  
+
             Gson g = new Gson();
-            
+
             String input = g.toJson(l);
 
             OutputStream os = conn.getOutputStream();
@@ -156,7 +148,6 @@ public class LoginService {
 //            while ((output = br.readLine()) != null) {
 //                System.out.println(output);
 //            }
-
             conn.disconnect();
             return true;
 
@@ -173,7 +164,3 @@ public class LoginService {
         }
     }
 }
-
-    
-
-

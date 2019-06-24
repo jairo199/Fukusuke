@@ -28,16 +28,16 @@ public class Cliente {
     private String Contrasena;
     private String Codigo_confirmacion;
     private String Estado;
-    
+
     public Cliente() {
     }
 
-    public Cliente(String Run, String Nombre_completo, String Email, String Telefono, String Sexo, String Fecha_nacimiento, String Direccion, String Comuna, String Provincia, String Region, String Contrasena, String Codigo_confirmacion, String Estado) throws ParseException {
+    public Cliente(String Run, String Nombre_completo, String Email, String Telefono, String Sexo, String Fecha_nacimiento, String Direccion, String Comuna, String Provincia, String Region, String Contrasena, String Codigo_confirmacion, String Estado) {
         this.Run = Run;
         this.Nombre_completo = Nombre_completo;
         this.Email = Email;
         this.Telefono = Telefono;
-        this.Sexo = Sexo;      
+        this.Sexo = Sexo;
         this.Fecha_nacimiento = Fecha_nacimiento;
         this.Direccion = Direccion;
         this.Comuna = Comuna;
@@ -45,6 +45,7 @@ public class Cliente {
         this.Region = Region;
         this.Contrasena = Contrasena;
         this.Codigo_confirmacion = Codigo_confirmacion;
+        this.Estado = Estado;
     }
 
     public String getRun() {
@@ -142,6 +143,17 @@ public class Cliente {
     public void setCodigo_confirmacion(String Codigo_confirmacion) {
         this.Codigo_confirmacion = Codigo_confirmacion;
     }
+
+    public String getEstado() {
+        return Estado;
+    }
+
+    public void setEstado(String Estado) {
+        this.Estado = Estado;
+    }
+    
+    
+    
     public static boolean validarRut(String rut) {
 
         boolean validacion = false;
