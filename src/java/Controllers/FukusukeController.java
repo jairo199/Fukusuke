@@ -69,6 +69,13 @@ public class FukusukeController extends HttpServlet {
         if (request.getParameter("nav_contacto") != null) {
             request.getRequestDispatcher("Contacto.jsp").forward(request, response);
         }
+        
+        //actuaizar datos de cliente        
+        if (request.getParameter("actualizarDatos") != null){
+            request.getRequestDispatcher("actualizardatos.jsp").forward(request, response);
+        }        
+                
+                
 
         if (request.getParameter("BTN_REGISTRO") != null) {
 

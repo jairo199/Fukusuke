@@ -205,8 +205,13 @@
                                 <div class="footer_links">
                                     <div class="footer_title" style="color: black;">Opciones</div>
                                     <ul>
-                                        <li><a href="actualizardatos.html" class="text-center">Acturalizar datos</a></li>
-                                        <li><a href="#" class="text-warning">Darse de baja</a></li>
+                                        <form action="<c:url value="/FukusukeController"/>" method="post">
+                                            
+                                            <li><input type="submit" name="actualizarDatos" value="Actualizar Datos" class="btn btn-success text-center"></li>
+                                                  
+                                            <li><a href="#" class="text-warning">Darse de baja</a></li>
+                                        </form>
+                                        
                                     </ul>
                                 </div>
                             </div>
