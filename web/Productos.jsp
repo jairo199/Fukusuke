@@ -20,12 +20,12 @@
 
         <div class="super_container">
             <div class="super_overlay"></div>
-            
+
             <jsp:include page="navbar/ModalIngreso.jsp" />
-            
-            
-            
-            
+
+
+
+
             <!-- Header -->
 
             <!-- Header -->
@@ -140,7 +140,7 @@
                                                     <option>Bebidas</option>
                                                     <option>Promociones</option>
                                                     <option>Handroll</option>
-                                                    
+
                                                 </select>
 
                                                 <div></div>
@@ -170,34 +170,37 @@
 
 
                                 <c:forEach var="Producto" items="${lstProducto}">
+                                    <form method="POST" action="<c:url value="/Carrito"/>"
+                                    <input type="hidden" value="${Producto.codigo_producto}" id="producto_id" name="producto_id" />
+                                    
+                                        <!-- Listing -->
+                                        <div class="listing_box house sale">
+                                            <div class="listing">
+                                                <div class="listing_image">
+                                                    <div class="listing_image_container">
+                                                        <img src="<c:out value="${Producto.url_photo}"/>" alt="">
+                                                    </div>
+                                                    <div class="tags d-flex flex-row align-items-start justify-content-start flex-wrap">
+                                                        <div class="tag tag_house"><a href="listings.html">Categoria...</a></div>
 
-                                    <!-- Listing -->
-                                    <div class="listing_box house sale">
-                                        <div class="listing">
-                                            <div class="listing_image">
-                                                <div class="listing_image_container">
-                                                    <img src="<c:out value="${Producto.url_photo}"/>" alt="">
+                                                    </div>
+                                                    <div class="tag_price listing_price">$<c:out value="${Producto.precio}"/></div>
                                                 </div>
-                                                <div class="tags d-flex flex-row align-items-start justify-content-start flex-wrap">
-                                                    <div class="tag tag_house"><a href="listings.html">Categoria...</a></div>
+                                                <div class="listing_content">
+                                                    <div class="prop_location listing_location d-flex flex-row align-items-start justify-content-start">
+                                                        <!--<img src="images/icon_10.png" alt="">-->
+                                                        <div class="row">
+                                                            <div class="col-sm-12" style="text-align: center;"><a href="producto.html"><c:out value="${Producto.descripcion}"/></a></div>
+                                                            <div class="col-sm-12"><input  type="submit" id="btn_añadir" name="btn_añadir" class="btn btn-warning btn-block" value="Añadir a carro"/></div>
+                                                        </div>
 
-                                                </div>
-                                                <div class="tag_price listing_price">$<c:out value="${Producto.precio}"/></div>
-                                            </div>
-                                            <div class="listing_content">
-                                                <div class="prop_location listing_location d-flex flex-row align-items-start justify-content-start">
-                                                    <!--<img src="images/icon_10.png" alt="">-->
-                                                    <div class="row">
-                                                        <div class="col-sm-12" style="text-align: center;"><a href="producto.html"><c:out value="${Producto.descripcion}"/></a></div>
-                                                        <div class="col-sm-12"><button class="btn btn-warning btn-block">Añadir a tu pedido</button></div>
+
                                                     </div>
 
-
                                                 </div>
-
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </c:forEach>
 
 

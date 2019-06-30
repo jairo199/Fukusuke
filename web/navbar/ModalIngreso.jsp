@@ -30,8 +30,15 @@
                             </div>	
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-warning btn-secondary btn-block" data-dismiss="modal">Cerrar</button>   
-                    <input type="submit" id="btn_login" name="btn_login" class="btn btn-info btn-block" value="Ingresar" >
+                    <div class="row">
+                        <div class="col-md-12"> <input type="submit" id="btn_login" name="btn_login" class="btn btn-info btn-block" value="Ingresar" ></div>
+                    </div>
+                     <div class="row">
+                        <div class="col-md-12"> <button type="button" class="btn btn-warning btn-block" data-dismiss="modal">Cerrar</button> </div>
+                    </div>
+                    
+                   
+                    
                 </div>
 	      </form>
 	    </div>

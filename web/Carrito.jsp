@@ -4,7 +4,7 @@
 <html lang="es">
 
     <head>
-        <title>Mi Cuenta</title>
+        <title>Mi Carrito de compras</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="myHOME - real estate template project">
@@ -134,89 +134,9 @@
             <div class="listings">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xl-3">
-                            <hr>
-                            <div class="col">
-                                <div class="footer_links">
-                                    <div class="footer_title" style="color: black;">Panel</div>
-                                    <ul>
-                                        <li><a href="#" class="text-success text-center">Mis Datos</a></li>
-                                        <li><a href="mispedidos.html" class="">Mis Pedidos</a></li>
-                                        <li><form action="<c:url value="/LoginController"/>" method="post"><input type="submit" value="Cerrar Sesión" name="btn_salir" id="btn_salir" class="btn btn-danger"/></form></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <hr>
-                        </div>
-                        <div class="col-xl-6">
-                            <hr>
-                            <div class="footer_title" style="color: black;">Mis Datos</div>
-
-                            <br>
-
-                            <div class="container">
-                                <table class="table table-hover">
-                                    <tbody>
-                                        <tr>
-                                            <td>RUT:</td>
-                                            <td><c:out value="${SessionUsuario.run}"/></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Nombre:</td>
-                                            <td><c:out value="${SessionUsuario.nombre_completo}"/></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Email:</td>
-                                            <td><c:out value="${SessionUsuario.email}"/></td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Telefono:</td>
-                                            <td><c:out value="${SessionUsuario.telefono}"/></td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Genero:</td>
-                                            <td><c:out value="${SessionUsuario.sexo}"/></td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Fecha Nacimiento:</td>
-                                            <td><c:out value="${SessionUsuario.fecha_nacimiento}"/></td>
-
-                                        </tr>
-                                        
-                                        <tr>
-                                            <td>Dirección</td>
-                                            <td><c:out value="${SessionUsuario.direccion}"/></td>
-                                        </tr>
-                                        
-                                    </tbody>
-                                </table>
-                            </div>
-                            <hr>
-
-
-
-                        </div>
-                        <div class="col-xl-3">
-                            <hr>
-                            <div class="col">
-                                <div class="footer_links">
-                                    <div class="footer_title" style="color: black;">Opciones</div>
-                                    <ul>
-                                        <form action="<c:url value="/FukusukeController"/>" method="post">
-                                            
-                                            <li><input type="submit" name="actualizarDatos" value="Actualizar Datos" class="btn btn-success text-center"></li>
-                                                  
-                                            <li><a href="#" class="text-warning">Darse de baja</a></li>
-                                        </form>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                            <hr>
-                        </div>
+                        
+                        <h1>CARRITO DE COMPRAS</h1>
+                        
                     </div>
                 </div>
             </div>

@@ -44,6 +44,15 @@ public class LoginController extends HttpServlet {
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
 
+        if (Session.getAttribute("Carrito") == null) {
+            Carrito = new ArrayList<Producto>();
+            System.out.println("1");
+        } else {
+            
+            Carrito = (ArrayList<Producto>) Session.getAttribute("Carrito");
+            
+        }
+
         //SI LA SESSION ESTA INICIADA, POR DEFAUL VA A PERFIL  
         request.getRequestDispatcher("perfil.jsp").forward(request, response);
 
@@ -55,7 +64,7 @@ public class LoginController extends HttpServlet {
         //processRequest(request, response);
 
         //SESION
-        HttpSession Session = request.getSession();//atributo sesion
+        Session = request.getSession();//atributo sesion
 
         ArrayList<String> listaFail = new ArrayList<String>();
         boolean esValido = true;
@@ -135,10 +144,12 @@ public class LoginController extends HttpServlet {
             if (esValido) {
 
                 if (Session.getAttribute("SessionUsuario") == null) {
-                    Carrito = new ArrayList<Producto>();
+                    
+                    Carrito =  new ArrayList<Producto>();
                     
                     Session.setAttribute("SessionUsuario", cli.getCliente(rut));
                     Session.setAttribute("Carrito", Carrito);
+                   
                 }
                 request.setAttribute("email", cli.getCliente(rut).getEmail());
 

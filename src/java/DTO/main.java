@@ -5,23 +5,9 @@
  */
 package DTO;
 
-import Service.LoginService;
-import Service.ProductoService;
-import com.google.gson.Gson;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
+
 import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import sun.misc.IOUtils;
+
 
 /**
  *
@@ -29,7 +15,7 @@ import sun.misc.IOUtils;
  */
 public class main {
 
-    public static void main(String[] args) throws MalformedURLException, IOException {
+    public static void main(String[] args) {
 
         // Usuario u = Service.UsuarioService.getUsuario(5);
         // Rol r = Service.RolService.getRol(1);
