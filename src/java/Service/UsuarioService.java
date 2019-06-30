@@ -72,7 +72,7 @@ public class UsuarioService {
         }
     }
 
-    public static List<Usuario> getUsuarios() {
+    public  List<Usuario> getUsuarios() {
         try {
 
             URL url = new URL(UsuarioService.url);

@@ -27,65 +27,65 @@
 
         <jsp:include page="navbar/ModalIngreso.jsp" />
 
-         <jsp:include page="navbar/ModalRegistro.jsp" />
-        
+        <jsp:include page="navbar/ModalRegistro.jsp" />
+
         <div class="super_container">
             <div class="super_overlay"></div>
             <!-- Header -->
-	<header class="header">		
-		<!-- Header Bar -->
-		<div class="header_bar d-flex flex-row align-items-center justify-content-start">
-			<div class="header_list">
-				<ul class="d-flex flex-row align-items-center justify-content-start">
-					<!-- Phone -->
-					<li class="d-flex flex-row align-items-center justify-content-start">
-						<div><img src="images/phone-call.svg" alt=""></div>
-						<span>+569 555 555 55</span>
-					</li>
-					<!-- Address -->
-					<li class="d-flex flex-row align-items-center justify-content-start">
-						<div><img src="images/placeholder.svg" alt=""></div>
-						<span>Direccion, Local , Concepción</span>
-					</li>
-					<!-- Email -->
-					<li class="d-flex flex-row align-items-center justify-content-start">
-						<div><img src="images/envelope.svg" alt=""></div>
-						<span>contacto@fukusuke.cl</span>
-					</li>
-				</ul>
-			</div>
-			<div class="ml-auto d-flex flex-row align-items-center justify-content-start">
-				<div class="social">
-					<ul class="d-flex flex-row align-items-center justify-content-start">
-						<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-					</ul>
-				</div>
-				<div class="log_reg d-flex flex-row align-items-center justify-content-start">
-					<ul class="d-flex flex-row align-items-start justify-content-start">						
-						
-						<li><a data-toggle="modal" href="#modalLogin">Ingresar</a></li>
-												
+            <header class="header">		
+                <!-- Header Bar -->
+                <div class="header_bar d-flex flex-row align-items-center justify-content-start">
+                    <div class="header_list">
+                        <ul class="d-flex flex-row align-items-center justify-content-start">
+                            <!-- Phone -->
+                            <li class="d-flex flex-row align-items-center justify-content-start">
+                                <div><img src="images/phone-call.svg" alt=""></div>
+                                <span>+569 555 555 55</span>
+                            </li>
+                            <!-- Address -->
+                            <li class="d-flex flex-row align-items-center justify-content-start">
+                                <div><img src="images/placeholder.svg" alt=""></div>
+                                <span>Direccion, Local , Concepción</span>
+                            </li>
+                            <!-- Email -->
+                            <li class="d-flex flex-row align-items-center justify-content-start">
+                                <div><img src="images/envelope.svg" alt=""></div>
+                                <span>contacto@fukusuke.cl</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ml-auto d-flex flex-row align-items-center justify-content-start">
+                        <div class="social">
+                            <ul class="d-flex flex-row align-items-center justify-content-start">
+                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="log_reg d-flex flex-row align-items-center justify-content-start">
+                            <ul class="d-flex flex-row align-items-start justify-content-start">						
 
-					</ul>
-				</div>
-			</div>
-		</div>
-		
+                                <li><a data-toggle="modal" href="#modalLogin">Ingresar</a></li>
 
-		<!-- Header Content -->
-		<div class="header_content d-flex flex-row align-items-center justify-content-start">
-			<div class="logo"><a href="#">FUKU<span>SUKE</span></a></div>
-			<nav class="main_nav">
-                            <jsp:include page="navbar/MenuPrincipal.jsp" />
 
-			</nav>
-			
-			<div class="submit ml-auto"><a href="index.jsp">Mi carrito (0)</a></div>
-            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
-		</div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-	</header>
+
+                <!-- Header Content -->
+                <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                    <div class="logo"><a href="#">FUKU<span>SUKE</span></a></div>
+                    <nav class="main_nav">
+                        <jsp:include page="navbar/MenuPrincipal.jsp" />
+
+                    </nav>
+
+                    <div class="submit ml-auto"><a href="index.jsp">Mi carrito (0)</a></div>
+                    <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                </div>
+
+            </header>
             <!-- Menu -->
 
             <div class="menu text-right">
@@ -97,7 +97,7 @@
 
                             <li class="nav-item dropdown">
                                 <a class=" dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                                        Administración
+                                    Administración
                                 </a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="gestionclientes.html">Gestion de Clientes</a>
@@ -154,14 +154,14 @@
                             <br>
                             <div class="container">
                                 <form method="post" action="<c:url value="/FukusukeController"/>">
-                                  
 
 
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="nombre">RUT</label>
-                                                    <input type="text" class="form-control" id="txt_run" name="txt_run" value="<c:out  value="${rut}"></c:out>" placeholder="Ingrese rut sin puntus y con guión." required maxlength="10">			    
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="nombre">RUT</label>
+                                                <input type="text" class="form-control" id="txt_run" name="txt_run" value="<c:out  value="${rut}"></c:out>" placeholder="Ingrese rut sin puntus y con guión." required maxlength="10">			    
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -234,12 +234,9 @@
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="txt_region">Region</label>
-                                                    <select class="form-control" id="txt_region" name="txt_region">
-                                                        <option value="Metropolitana">Metropolitana</option>
-                                                        <option value="Bio-Bio">Bio-Bio</option>
-                                                        <option value="Ñuble">Ñuble</option>	      
-                                                    </select>
+                                                    <label for="txt_region">Region</label>                                   
+                                                    <select class="form-control" id="regiones"></select>
+
                                                 </div>
                                             </div>
 
@@ -256,26 +253,24 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="txt_comuna">Comuna</label>
-                                                    <select class="form-control" id="txt_comuna" name="txt_comuna">
-                                                        <option value="Santiago">Santiago</option>
-                                                        <option value="Coelemu">Coelemu</option>
-                                                        <option value="Tomé">Tomé</option>
-                                                        <option value="Chiguayante">Chiguayante</option>
-                                                    </select>
+
+                                                    <select class="form-control" id="comunas"></select>
+                                                    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+                                                    <script src="/js/ciudades.js"></script>
                                                 </div>
                                             </div>
 
                                         </div>
 
-                                    <div class="form-group">
-                                        <input type="submit" class="btn btn-success btn-block" id="BTN_REGISTRO" name="BTN_REGISTRO" value="Registrarse">
-                                    </div>
-                                    <hr>
-                                </form>
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btn-success btn-block" id="BTN_REGISTRO" name="BTN_REGISTRO" value="Registrarse">
+                                        </div>
+                                        <hr>
+                                    </form>
                                 <c:forEach var="Error" items="${listaErrores}">
                                     <h3 class="alert alert-warning text-center"><c:out  value="${Error}"></c:out></h3>
                                 </c:forEach> 
-                                    <hr>
+                                <hr>
                             </div>
 
 
@@ -286,7 +281,7 @@
             </div>
 
             <!-- Footer -->
-             <jsp:include page="navbar/Footer.jsp" />
+            <jsp:include page="navbar/Footer.jsp" />
         </div>
 
         <script src="js/jquery-3.3.1.min.js"></script>
@@ -303,6 +298,10 @@
         <script src="plugins/parallax-js-master/parallax.min.js"></script>
         <script src="plugins/Isotope/isotope.pkgd.min.js"></script>
         <script src="js/listings.js"></script>
+
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src="/js/ciudades.js"></script>
+
     </body>
 
 

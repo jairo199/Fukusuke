@@ -80,7 +80,7 @@
                     <nav class="main_nav">
                         <jsp:include page="navbar/MenuPrincipal.jsp" />
                     </nav>
-                    <div class="submit ml-auto"><a href="index.html">Mi carrito (0)</a></div>
+                        <div class="submit ml-auto"><a href="index.html">Mi carrito <label id="Carrito">(<c:out value="${Carrito.size()}"/>)</label></a></div>
                     <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
                 </div>
 
@@ -118,7 +118,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="home_content text-center">
-                                <div class="home_title">Bienvenido <%=request.getSession().getAttribute("SessionUsuario")%></div>
+                                <div class="home_title">Bienvenido <label id="SessionUsuario"><c:out value="${SessionUsuario.nombre_completo}"/></label></div>
                             </div>
                         </div>
                     </div>

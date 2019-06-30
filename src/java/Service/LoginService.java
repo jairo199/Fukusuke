@@ -29,19 +29,23 @@ public class LoginService {
 
     private static String url = "http://pipedev-001-site1.ctempurl.com/api/Login";
 
+    /**
+     * VALIDA CORREO ELECTRONICO
+     *
+     * @param Run RUT CLCIENTE
+     * @param Codigo CODIGO ENVIADO A CORREO
+     * @return CADENA DE TEXTO CON EXITO O FRACASO
+     */
     public static String getLogin(String Run, String Codigo) {
         try {
-            
-            
-            String aa;
-            
-            URL url = new URL(LoginService.url + "?Run="+Run+ "&codigo=" + Codigo);
+
+            //String aa;
+            URL url = new URL(LoginService.url + "?Run=" + Run + "&codigo=" + Codigo);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
-            
-            aa = url+"";
-            
+
+            //aa = url+"";
             if (conn.getResponseCode() != 200) {
 
                 return "Codigo Erroneo";
@@ -49,9 +53,8 @@ public class LoginService {
 
             BufferedReader br = new BufferedReader(new InputStreamReader(
                     (conn.getInputStream())));
-            
+
             String output;
-            
 
             StringBuilder content = new StringBuilder();
 
@@ -64,13 +67,14 @@ public class LoginService {
 //
 //            Cliente u = g.fromJson(content.toString(), Cliente.class);
             conn.disconnect();
+
             return content.toString();
+
 //            if (u != null) {
 //                return u;
 //            } else {
 //                return null;
 //            }
-
         } catch (MalformedURLException e) {
 
             return null;
@@ -79,18 +83,24 @@ public class LoginService {
         }
     }
 
-    public static boolean putUsuario(Login l) {
+    /**
+     * LOGIN DE CLIENTES
+     *
+     * @param login OBJETO CLASE LOGIN CON LOS DATOS DEL CLIENTE
+     * @return TRUE O FALSE
+     */
+    public static boolean postCliente(Login login) {
         try {
 
             URL url = new URL(Service.LoginService.url);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setDoOutput(true);
-            conn.setRequestMethod("PUT");
+            conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json");
 
             Gson g = new Gson();
-            
-            String input = g.toJson(l);
+
+            String input = g.toJson(login);
 
             OutputStream os = conn.getOutputStream();
             os.write(input.getBytes());
@@ -108,7 +118,6 @@ public class LoginService {
 //            while ((output = br.readLine()) != null) {
 //                System.out.println(output);
 //            }
-
             conn.disconnect();
             return true;
 
@@ -125,18 +134,18 @@ public class LoginService {
         }
     }
 
-    public static boolean postLoginCliente(Login l) {
+    public static boolean putUsuario(Login login) {
         try {
 
             URL url = new URL(Service.LoginService.url);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setDoOutput(true);
-            conn.setRequestMethod("POST");
+            conn.setRequestMethod("PUT");
             conn.setRequestProperty("Content-Type", "application/json");
 
             Gson g = new Gson();
 
-            String input = g.toJson(l);
+            String input = g.toJson(login);
 
             OutputStream os = conn.getOutputStream();
             os.write(input.getBytes());

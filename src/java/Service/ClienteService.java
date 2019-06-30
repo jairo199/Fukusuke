@@ -25,24 +25,22 @@ import java.util.List;
  * @author Cheqcoslov
  */
 public class ClienteService {
-          private static String url = "http://pipedev-001-site1.ctempurl.com/api/clientes/";
+
+    private static String url = "http://pipedev-001-site1.ctempurl.com/api/clientes/";
 
     public static Cliente getCliente(String Rut) {
         try {
-            
-           
-            
+
             URL url = new URL(ClienteService.url + Rut);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
 
             if (conn.getResponseCode() != 200) {
-                
+
                 return null;
-            }          
-            
-            
+            }
+
             BufferedReader br = new BufferedReader(new InputStreamReader(
                     (conn.getInputStream())));
 
@@ -73,8 +71,8 @@ public class ClienteService {
             return null;
         }
     }
-    
-        public static List<Cliente> getClientes() {
+
+    public static List<Cliente> getClientes() {
         try {
 
             URL url = new URL(ClienteService.url);
@@ -117,19 +115,18 @@ public class ClienteService {
             return null;
         }
     }
-        
-        
-    public static boolean postCliente(Cliente cliente){
-          try {
+
+    public static boolean postCliente(Cliente cliente) {
+        try {
 
             URL url = new URL(Service.ClienteService.url);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setDoOutput(true);
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json");
-  
+
             Gson g = new Gson();
-            
+
             String input = g.toJson(cliente);
 
             OutputStream os = conn.getOutputStream();
@@ -164,5 +161,5 @@ public class ClienteService {
 
         }
     }
-    
+
 }
