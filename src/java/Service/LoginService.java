@@ -79,7 +79,7 @@ public class LoginService {
         }
     }
 
-    public static boolean putUsuario(Usuario usuario) {
+    public static boolean putUsuario(Login l) {
         try {
 
             URL url = new URL(Service.LoginService.url);
@@ -89,8 +89,8 @@ public class LoginService {
             conn.setRequestProperty("Content-Type", "application/json");
 
             Gson g = new Gson();
-
-            String input = g.toJson(usuario);
+            
+            String input = g.toJson(l);
 
             OutputStream os = conn.getOutputStream();
             os.write(input.getBytes());
@@ -103,11 +103,11 @@ public class LoginService {
             BufferedReader br = new BufferedReader(new InputStreamReader(
                     (conn.getInputStream())));
 
-            String output;
-            System.out.println("Output from Server .... \n");
-            while ((output = br.readLine()) != null) {
-                System.out.println(output);
-            }
+//            String output;
+//            System.out.println("Output from Server .... \n");
+//            while ((output = br.readLine()) != null) {
+//                System.out.println(output);
+//            }
 
             conn.disconnect();
             return true;

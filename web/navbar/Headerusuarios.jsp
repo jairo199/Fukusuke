@@ -62,7 +62,7 @@
 
                     </ul>
                 </nav>
-                <div class="submit ml-auto"><form action="<c:url value="/LoginController"/>" method="post"><input type="submit" value="Cerrar Sesión" name="cerrarusuario" id="btn_salir" class="btn-block btn-lg btn btn-link text-dark"/></form></div>
+                <div class="submit ml-auto"><form action="<c:url value="/sistema"/>" method="post"><input type="submit" value="Cerrar Sesión" name="cerrarusuario" id="btn_salir" class="btn-block btn-lg btn btn-link text-dark"/></form></div>
                                     
                 <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
             </div>

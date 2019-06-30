@@ -42,7 +42,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="home_content text-center">
-                                <div class="home_title">Inice Sesión</div>
+                                <div class="home_title">Inicie Sesión</div>
                             </div>
                         </div>
                     </div>
@@ -59,14 +59,14 @@
                     <div class="row">					
                         <div class="col-xl-12">
                             <hr>
-                            <div class="footer_title" style="color: black;">Ingrese sus Datos</div>                            
+                            <div class="footer_title" style="color: black;">Ingrese sus datos de usuario</div>                            
                             <br>
 
                             <div class="">
-                                <form method="post" action="<c:url value="/LoginController"/>">
+                                <form method="post" action="<c:url value="/sistema"/>">
                                     <div class="form-group">
-                                        <label for="rut">RUT</label>
-                                        <input type="rut" class="form-control" id="rut" name="rut"  placeholder="Ingrese RUT sin puntos y con guion">			    
+                                        <label for="rut">Codigo Usuario</label>
+                                        <input type="number" class="form-control" id="codigo" name="codigo"  placeholder="Ingrese su Codigo de usuario">			    
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Contraseña</label>
@@ -74,7 +74,7 @@
                                     </div>
                                     <div class="form-group">
 
-                                        <input type="submit" id="btn_login" name="btn_login" class="btn btn-success btn-block" value="Ingresar" >
+                                        <input type="submit" id="loginusuario" name="loginusuario" class="btn btn-success btn-block" value="Ingresar" >
                                     </div>
                                 </form>
 

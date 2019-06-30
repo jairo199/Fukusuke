@@ -9,6 +9,7 @@ import DTO.Cliente;
 import DTO.Login;
 import Service.ClienteService;
 import Service.LoginService;
+import Service.UsuarioService;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -157,6 +158,10 @@ public class LoginController extends HttpServlet {
 
         }
         request.getRequestDispatcher("login.jsp").forward(request, response);
+        
+        
+
+        
 
     }
 
