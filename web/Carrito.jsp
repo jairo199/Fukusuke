@@ -19,11 +19,11 @@
     </head>
 
     <body>
-        
-        
+
+
         <jsp:include page="navbar/ModalIngreso.jsp" />
 
-         <jsp:include page="navbar/ModalRegistro.jsp" />
+        <jsp:include page="navbar/ModalRegistro.jsp" />
 
         <div class="super_container">
             <div class="super_overlay"></div>
@@ -80,7 +80,7 @@
                     <nav class="main_nav">
                         <jsp:include page="navbar/MenuPrincipal.jsp" />
                     </nav>
-                        <div class="submit ml-auto"><a href="index.html">Mi carrito <label id="Carrito">(<c:out value="${Carrito.size()}"/>)</label></a></div>
+                    <div class="submit ml-auto"><a href="index.html">Mi carrito <label id="Carrito">(<c:out value="${Carrito.size()}"/>)</label></a></div>
                     <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
                 </div>
 
@@ -118,26 +118,81 @@
                     <div class="row">
                         <div class="col">
                             <div class="home_content text-center">
-                                <div class="home_title">Bienvenido <label id="SessionUsuario"><c:out value="${SessionUsuario.nombre_completo}"/></label></div>
+                                <div class="home_title">Carrito de compras <span class="fa fa-shopping-basket"></span></div>
+                                <div style="color: white;">Cliente : <label id="SessionUsuario"><c:out value="${SessionUsuario.nombre_completo}"/></label></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Search -->
-
+            <!-- msg -->
+            <div class="container">                   
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="alert alert-info" id="msg"><c:out value="${msg}"/></label>
+                    </div>                        
+                </div>                    
+            </div>
 
 
             <!-- Listings -->
 
             <div class="listings">
-                <div class="container">
+                <div class="container">                   
                     <div class="row">
-                        
-                        <h1>CARRITO DE COMPRAS</h1>
-                        
+                        <div class="col-md-12">
+
+
+                            <table class="table">
+                                <label id="mensaje"></label>
+                                <thead class="thead-success">
+                                    <tr>
+                                        <th scope="col">Producto</th>
+                                        <th scope="col">Valor</th>
+                                        <th scope="col">Cantidad</th>
+                                        <th scope="col">Subtotal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <c:forEach var="Producto" items="${Carrito}">
+                                        <tr>
+                                            <th><label><c:out value="${Producto}"/></label></th>
+                                            <th><label><c:out value="${Producto.precio_producto}"/></label></th>
+                                            <th><label><c:out value="${Producto.cantidad}"/></label></th>
+                                            <th><label><c:out value="${Producto.sub_total}"/></label></th>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
+                            </table>
+
+                            <hr>
+                        </div>
+
                     </div>
+
+
+                    <form>
+                        <div class="row">                     
+                            <div class="col-md-4">
+                                <hr>
+                                <div class="footer_title" style="color: black;">Total: $</div>         
+                                <hr>
+                            </div>
+                            <div class="col-md-8">
+                                <hr>
+                                <div>
+                                    <button type="submit" class="btn btn-success btn-block" ><span class="fa fa-money"></span> Pagar</button>                                
+                                </div>
+                                <div class="form-check-inline" style="margin-top:10px;">                                                               
+                                    <input type="checkbox" required="" id="chkPagar" style="margin-right:10px;"> Acepto los términos y condiciones
+                                </div>   
+                                <hr>
+                            </div>
+
+                        </div>
+                    </form>
+
                 </div>
             </div>
 

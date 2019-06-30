@@ -6,14 +6,12 @@
 package Controllers;
 
 import DTO.Cliente;
+import DTO.DetallePedido;
 import DTO.Login;
 import DTO.Producto;
 import Service.ClienteService;
 import Service.LoginService;
-import Service.UsuarioService;
-
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,7 +28,7 @@ import javax.servlet.http.HttpSession;
 public class LoginController extends HttpServlet {
 
     HttpSession Session;
-    ArrayList<Producto> Carrito;
+    ArrayList<DetallePedido> Carrito;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -45,11 +43,11 @@ public class LoginController extends HttpServlet {
         }
 
         if (Session.getAttribute("Carrito") == null) {
-            Carrito = new ArrayList<Producto>();
+            Carrito = new ArrayList<DetallePedido>();
             System.out.println("1");
         } else {
             
-            Carrito = (ArrayList<Producto>) Session.getAttribute("Carrito");
+            Carrito = (ArrayList<DetallePedido>) Session.getAttribute("Carrito");
             
         }
 
@@ -145,7 +143,7 @@ public class LoginController extends HttpServlet {
 
                 if (Session.getAttribute("SessionUsuario") == null) {
                     
-                    Carrito =  new ArrayList<Producto>();
+                    Carrito =  new ArrayList<DetallePedido>();
                     
                     Session.setAttribute("SessionUsuario", cli.getCliente(rut));
                     Session.setAttribute("Carrito", Carrito);
