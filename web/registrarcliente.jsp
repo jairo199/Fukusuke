@@ -10,7 +10,7 @@
 
     <head>
         <title>Registro de usuarios</title>
-        <meta charset="utf-8">
+     <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="myHOME - real estate template project">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,15 +19,14 @@
         <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.carousel.css">
         <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
         <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/animate.css">
-        <link rel="stylesheet" type="text/css" href="styles/listings.css">
-        <link rel="stylesheet" type="text/css" href="styles/listings_responsive.css">
+        <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+        <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+        
     </head>
 
     <body>
 
         <jsp:include page="navbar/ModalIngreso.jsp" />
-
-        <jsp:include page="navbar/ModalRegistro.jsp" />
 
         <div class="super_container">
             <div class="super_overlay"></div>
@@ -231,7 +230,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="txt_telefono">Telefono</label>
-                                                <input type="text" class="form-control" id="txt_telefono" name="txt_telefono" placeholder="" required="true">			                                                
+                                                <input type="number" class="form-control" id="txt_telefono" name="txt_telefono" placeholder="" required="true">			                                                
                                             </div>
                                         </div>
 
@@ -317,9 +316,7 @@
         <script src="plugins/Isotope/isotope.pkgd.min.js"></script>
         <script src="js/listings.js"></script>
 
-        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-        <script src="/js/ciudades.js"></script>
-
+        
 
         <script>
             var RegionesYcomunas = {
@@ -432,6 +429,9 @@
 
             });
         </script>
+            
+
+ 
 
     </body>
 
