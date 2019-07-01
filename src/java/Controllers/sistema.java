@@ -38,7 +38,10 @@ public class sistema extends HttpServlet {
         if (Session.getAttribute("SessionUsuario") == null) {
             request.getRequestDispatcher("loginsistema.jsp").forward(request, response);
         }
-
+        
+        
+        
+        
         //SI LA SESSION ESTA INICIADA, POR DEFAUL VA A PERFIL  
         request.getRequestDispatcher("cpanel.jsp").forward(request, response);
 

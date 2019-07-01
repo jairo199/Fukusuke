@@ -135,6 +135,14 @@ public class FukusukeController extends HttpServlet {
                  esValido2 = true;
                 
             }
+            if (Service.ClienteService.getCliente(rut)!=null) {
+                    listaFail.add("Este usuario " +rut+" ya existe");
+                    esValido2 = false;
+                }
+            if (request.getParameter("txt_telefono").length()!=9) {
+                listaFail.add("El numero de telefono debe contener solo 9 numeros");
+                esValido2 = false;
+            }
             if (esValido2) {
                 
                 cliente.setRun(rut);
@@ -152,6 +160,7 @@ public class FukusukeController extends HttpServlet {
                 cliente.setContrasena(request.getParameter("txt_pass").toString());
                 cliente.setEstado("0");
                 
+                
                 if (!Service.ClienteService.postCliente(cliente)) {
                     
                     request.setAttribute("listaErrores", listaFail);
@@ -162,7 +171,7 @@ public class FukusukeController extends HttpServlet {
                     request.getRequestDispatcher("validarEmail.jsp").forward(request, response);
                 }
                     
-               
+                
                 
             }else{
                     

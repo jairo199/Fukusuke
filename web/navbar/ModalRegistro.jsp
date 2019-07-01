@@ -25,7 +25,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="nombre">RUT</label>
-                                    <input type="text" class="form-control" id="txt_run" name="txt_run" placeholder="Ingrese rut sin puntus y con guión." required maxlength="10">			    
+                                    <input type="text" class="form-control" id="txt_run" name="txt_run" placeholder="Ingrese rut sin puntos y con guión." required maxlength="10">			    
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -96,7 +96,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="txt_telefono">Telefono</label>
-                                    <input type="text" class="form-control" id="txt_telefono" name="txt_telefono" placeholder="" required="true">			                                                
+                                    <input type="number" class="form-control" id="txt_telefono" name="txt_telefono" placeholder="" required="true">			                                                
                                 </div>
                             </div>
                             
