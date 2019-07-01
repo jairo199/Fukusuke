@@ -167,10 +167,21 @@ public class LoginController extends HttpServlet {
         /**
          * BOTONE CLIENTE
          */
+        if (request.getParameter("btn_misdatos") != null) {
+
+        }
+        if (request.getParameter("btn_mispedidos") != null) {
+
+        }
         
+        //actuaizar datos de cliente        
+        if (request.getParameter("actualizarDatos") != null){
+            request.getRequestDispatcher("actualizardatos.jsp").forward(request, response);
+        }  
         
-        
-        
+        if (request.getParameter("btn_bajacliente") != null) {
+
+        }
         
             
  

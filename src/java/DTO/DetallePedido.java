@@ -16,17 +16,29 @@ public class DetallePedido {
     private int Cantidad;
     private int Precio_producto;
     private int Sub_total;
+    private String NombreProducto;
 
     public DetallePedido() {
     }
 
-    public DetallePedido(int Codigo_producto, int Codigo_pedido, int Cantidad, int Precio_producto, int Sub_total) {
+    public DetallePedido(int Codigo_producto, int Codigo_pedido, int Cantidad, int Precio_producto, int Sub_total, String NombreProducto) {
         this.Codigo_producto = Codigo_producto;
         this.Codigo_pedido = Codigo_pedido;
         this.Cantidad = Cantidad;
         this.Precio_producto = Precio_producto;
         this.Sub_total = Sub_total;
+        this.NombreProducto = NombreProducto;
     }
+
+    public String getNombreProducto() {
+        return NombreProducto;
+    }
+
+    public void setNombreProducto(String NombreProducto) {
+        this.NombreProducto = NombreProducto;
+    }
+
+   
 
     public int getCodigo_producto() {
         return Codigo_producto;

@@ -11,14 +11,14 @@ import java.util.ArrayList;
  *
  * @author Jairo
  */
-public class Carrito {
+public class Carro {
     private ArrayList<Producto> Carrito;
     private Cliente cliente;
 
-    public Carrito() {
+    public Carro() {
     }
 
-    public Carrito(ArrayList<Producto> Carrito, Cliente cliente) {
+    public Carro(ArrayList<Producto> Carrito, Cliente cliente) {
         this.Carrito = Carrito;
         this.cliente = cliente;
     }

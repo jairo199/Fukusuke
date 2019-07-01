@@ -161,31 +161,34 @@
 
                                         <tr>
 
-                                            <th><label><c:out value="${DetallePedido.codigo_producto}"/></label></th>
+                                            <th><label><c:out value="${DetallePedido}"/></label></th>
                                             <th><label><c:out value="${DetallePedido.codigo_producto}"/></label></th>
                                             <th><label><c:out value="${DetallePedido.precio_producto}"/></label></th>
 
-                                    <form method="post" action="<c:url value="/Carrito" />">
-                                        <th><input id="cantidad" name="cantidad" type="number" max="10" min="1" value="<c:out value="${DetallePedido.cantidad}"/>" class="form-control"/></th>
-                                        <th><label><c:out value="${DetallePedido.sub_total}"/></label></th>
-                                        <th>                                                
-                                            <input type="hidden" value="${DetallePedido.codigo_producto}" id="id_producto">
-                                            <button type="submit" class="btn btn-warning"><span class="fa fa-edit"></span></button>                                                
-                                        </th>
-
-                                    </form>
-
-                                    <th>
-                                        <form method="post" action="<c:url value="/Carrito" />">
-                                            <input type="hidden" name="cod_producto" value="${DetallePedido.codigo_producto}" id="cod_producto">
-                                            <button type="submit" id="btn_remove" name="btn_remove" class="btn btn-danger"><span class="fa fa-remove"></span></button>
-                                        </form>
-                                    </th>
+                                            <form method="post" action="<c:url value="/Carrito" />">  
+                                            <th><input id="cantidad" name="cantidad" type="number" max="10" min="1" value="<c:out value="${DetallePedido.cantidad}"/>" class="form-control"/></th>
+                                            <th><label><c:out value="${DetallePedido.sub_total}"/></label></th>
+                                            <th> 
+                                                                                             
+                                                    <input type="hidden" value="${DetallePedido.codigo_producto}" id="id_producto" name="id_producto">
+                                                    
+                                                    <button type="submit" class="btn btn-warning" name="btn_edit"><span class="fa fa-edit"></span></button>                                                
+                                                </form>
+                                            </th>
 
 
-                                    </tr>
 
-                                </c:forEach>
+                                            <th>
+                                                <form method="post" action="<c:url value="/Carrito" />">
+                                                    <input type="hidden" name="cod_producto" value="${DetallePedido.codigo_producto}" id="cod_producto">
+                                                    <button type="submit" id="btn_remove" name="btn_remove" class="btn btn-danger"><span class="fa fa-remove"></span></button>
+                                                </form>
+                                            </th>
+
+
+                                        </tr>
+
+                                    </c:forEach>
                                 </tbody>
                             </table>
 

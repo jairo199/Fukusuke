@@ -7,6 +7,7 @@ package Controllers;
 
 import DTO.DetallePedido;
 import DTO.Producto;
+import DTO.Carro;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
@@ -25,6 +26,7 @@ public class Carrito extends HttpServlet {
 
     HttpSession Session;
     ArrayList<DetallePedido> Carrito;
+   
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -82,7 +84,7 @@ public class Carrito extends HttpServlet {
             request.setAttribute("Total", total);
             request.getRequestDispatcher("Carrito.jsp").forward(request, response);
         } catch (Exception e) {
-             request.getRequestDispatcher("Carrito.jsp").forward(request, response);
+            request.getRequestDispatcher("Carrito.jsp").forward(request, response);
         }
 
     }
@@ -123,13 +125,15 @@ public class Carrito extends HttpServlet {
 
             //CREATE PRODUCTO DESDE SERVICE    
             Producto p = Service.ProductoService.getProducto(id_producto);
-
+           
+            
             //SETEO DETALLE PEDIDO CON DATOS DEL PRODUCTO Y PARAMETROS DE LA VISTA
             dp.setCantidad(cantidad);
             dp.setCodigo_producto(p.getCodigo_producto());
             dp.setPrecio_producto(p.getPrecio());
             dp.setSub_total(p.getPrecio() * cantidad);
-
+            dp.setNombreProducto(p.getDescripcion());
+            
             //RECORRER CARRITO Y PREGUNTTAR SU EXISTE EL PRODUCTO QUE SE QUIERE AÑADIR
             for (DetallePedido item : Carrito) {
 
@@ -154,7 +158,7 @@ public class Carrito extends HttpServlet {
 
                 //SE SETEA LA VARIABLE TOTAL
                 for (DetallePedido item : Carrito) {
-
+                    System.out.println(item.getNombreProducto());
                     total = total + item.getSub_total();
 
                 }
@@ -162,6 +166,7 @@ public class Carrito extends HttpServlet {
                 //REDIRECCION A CARRITO
                 request.setAttribute("Total", total);
                 request.setAttribute("msg", "Producto agregado con éxito.");
+                
                 request.getRequestDispatcher("Carrito.jsp").forward(request, response);
             }
             request.getRequestDispatcher("Productos.jsp").forward(request, response);
@@ -200,24 +205,28 @@ public class Carrito extends HttpServlet {
         if (request.getParameter("btn_edit") != null) {
 
             try {
-                int cod_producto = (int) Integer.parseInt(request.getParameter("cod_producto"));
-
+                int cod_producto = (int) Integer.parseInt(request.getParameter("id_producto"));
+                int cantidad = (int) Integer.parseInt(request.getParameter("cantidad"));
+                System.out.println("%%%%%%%%%%% cantidad: " + cantidad);
                 for (DetallePedido item : Carrito) {
-
                     if (item.getCodigo_producto() == cod_producto) {
-                        Carrito.remove(item);
+                        
+                        item.setCantidad(cantidad);
+                        
+                        item.setSub_total(item.getPrecio_producto()*item.getCantidad());
                     }
 
                 }
 
                 //SE SETEA LA VARIABLE TOTAL
-                for (DetallePedido item : Carrito) {
-                    total = total + item.getSub_total();
+                for (DetallePedido itemm : Carrito) {
+                    total = total + itemm.getSub_total();
                 }
 
                 request.setAttribute("Total", total);
-                request.setAttribute("msg", "Producto removido con éxito.");
+                request.setAttribute("msg", "Producto modificado con éxito.");
                 request.getRequestDispatcher("Carrito.jsp").forward(request, response);
+
             } catch (Exception e) {
                 request.getRequestDispatcher("Carrito.jsp").forward(request, response);
             }
