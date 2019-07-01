@@ -34,25 +34,10 @@
             <header class="header">		
                 <!-- Header Bar -->
                 <div class="header_bar d-flex flex-row align-items-center justify-content-start">
-                    <div class="header_list">
-                        <ul class="d-flex flex-row align-items-center justify-content-start">
-                            <!-- Phone -->
-                            <li class="d-flex flex-row align-items-center justify-content-start">
-                                <div><img src="images/phone-call.svg" alt=""></div>
-                                <span>+569 555 555 55</span>
-                            </li>
-                            <!-- Address -->
-                            <li class="d-flex flex-row align-items-center justify-content-start">
-                                <div><img src="images/placeholder.svg" alt=""></div>
-                                <span>Direccion, Local , Concepción</span>
-                            </li>
-                            <!-- Email -->
-                            <li class="d-flex flex-row align-items-center justify-content-start">
-                                <div><img src="images/envelope.svg" alt=""></div>
-                                <span>contacto@fukusuke.cl</span>
-                            </li>
-                        </ul>
-                    </div>
+                    
+                    <jsp:include page="navbar/Navmorado.jsp" />
+                    
+                    
                     <div class="ml-auto d-flex flex-row align-items-center justify-content-start">
                         <div class="social">
                             <ul class="d-flex flex-row align-items-center justify-content-start">
@@ -75,40 +60,10 @@
 
 
                 <!-- Header Content -->
-                <div class="header_content d-flex flex-row align-items-center justify-content-start">
-                    <div class="logo"><a href="#">FUKU<span>SUKE</span></a></div>
-                    <nav class="main_nav">
+                
                         <jsp:include page="navbar/MenuPrincipal.jsp" />
 
-                    </nav>
-
-                    <div class="submit ml-auto"><a href="/Fukusuke/Carrito"><span class="fa fa-shopping-basket"> </span> Mi carrito <label id="Carrito">(<c:out value="${Carrito.size()}"/>)</label></a></div>
-                    <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
-                </div>
-
-            </header>
-
-            <!-- Menu -->
-
-            <div class="menu text-right">
-                <div class="menu_close"><i class="fa fa-times" aria-hidden="true"></i></div>
-                <div class="menu_log_reg">
-                    <div class="log_reg d-flex flex-row align-items-center justify-content-end">
-                        <ul class="d-flex flex-row align-items-start justify-content-start">
-                            <li><a data-toggle="modal" href="#modalLogin">Ingresar</a></li>
-                            <li><a data-toggle="modal" href="#modalRegisto">Registro</a></li>
-                        </ul>
-                    </div>
-                    <nav class="menu_nav">
-                        <ul>
-                            <li><a href="index.jsp">Inicio</a></li>
-                            <li><a href="nosotros.jsp">Nosotros</a></li>
-                            <li><a href="Productos.jsp">Productos</a></li>				
-                            <li><a href="contacto.jsp">Contacto</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+                    
 
             <!-- Home -->
 
@@ -126,10 +81,22 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class="home_content">
-                                                <div class="home_title"><h1>¡Handroll a Luca!</h1></div>
-                                                <div class="home_price_tag">$1.000</div>
+                                                                                                
+                                                
+                                                <div class="home_title"><h1>Promocion 1</h1></div>
+                                                <div class="home_price_tag">$3990</div>
                                                 <hr>
-                                                <div class="container"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique error temporibus nam laudantium hic ad excepturi fugit cupiditate nihil tempora. Quaerat culpa pariatur libero porro, magnam in non fugit architecto.</p></div>
+                                                <div class="container">
+                                                    <p>
+                                                        LLevate la Promocion 1 de 16 Piezas de 
+                                                        sushi que incluye:<br>
+                                                        4 piezas Queso Crema.<br>
+                                                        4 Piezas Panko Kanikama.<br>
+                                                        4 Piezas Tempura.<br>
+                                                        4 Piezas Hosomaki.<br>
+                                                        por solo ¡ $3990 ! Stock Limitado
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -145,10 +112,20 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class="home_content">
-                                                <div class="home_title"><h1>Promo 2</h1></div>
-                                                <div class="home_price_tag">$5.990</div>
+                                                <div class="home_title"><h1>Promocion 5</h1></div>
+                                                <div class="home_price_tag">$8990</div>
                                                 <hr>
-                                                <div class="container"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique error temporibus nam laudantium hic ad excepturi fugit cupiditate nihil tempora. Quaerat culpa pariatur libero porro, magnam in non fugit architecto.</p></div>
+                                                <div class="container">
+                                                    <p>
+                                                        LLevate la Promo 5 incluye:<br>
+                                                        8 piezas Queso Crema.<br>
+                                                        8 Piezas Panko Kanikama.<br>
+                                                        8 Piezas Tempura.<br>
+                                                        8 Piezas Hosomaki.<br>
+                                                        1 Pepsi 2.25Lt.<br> 
+                                                        por solo ¡ $8990 ! Stock Limitado
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -164,10 +141,20 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class="home_content">
-                                                <div class="home_title"><h1>Promo 3</h1></div>
-                                                <div class="home_price_tag">$ 9.990</div>
+                                                <div class="home_title"><h1>Promocion 6</h1></div>
+                                                <div class="home_price_tag">$11490</div>
                                                 <hr>
-                                                <div class="container"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique error temporibus nam laudantium hic ad excepturi fugit cupiditate nihil tempora. Quaerat culpa pariatur libero porro, magnam in non fugit architecto.</p></div>
+                                                <div class="container">
+                                                    <p>
+                                                        LLevate la Promo 6 incluye:<br>
+                                                        15 piezas Panko Salmon.<br>
+                                                        15 Piezas Panko Kanikama.<br>
+                                                        10 Piezas Tempura.<br>
+                                                        10 Piezas Panko Pollo.<br>
+                                                        1 Fanta 2Lt.<br> 
+                                                        por solo ¡ $11490 ! Stock Limitado
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -232,7 +219,7 @@
                             <!-- Footer Column -->
                             <div class="col-xl-3 col-lg-6 footer_col">
                                 <div class="footer_about">
-                                    <div class="footer_logo"><a href="#">FUKU<span>SUKE</span></a></div>
+                                    <div class="footer_logo"><a href="">FUKU<span>SUKE</span></a></div>
                                     <div class="footer_text">
 
                                         <p>El restaurant de sushi Fukusuke, es una empresa dedicada a la preparación y venta de sushi en la modalidad online y años de trayectoria en su propio local.</p>
@@ -285,17 +272,13 @@
                         <div class="row">
                             <div class="col">
                                 <div class="footer_bar_content d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
-                                    <div class="copyright order-md-1 order-2"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    <nav class="footer_nav order-md-1 order-2 ml-md-auto">
+                                        
+                                    </nav>
+                                    <div class="copyright order-md-2 order-1"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                         Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Fukusuke 2019
                                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
-                                    <nav class="footer_nav order-md-2 order-1 ml-md-auto">
-                                        <ul class="d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
-                                            <li><a href="index.jsp">Home</a></li>
-                                            <li><a href="nosotros.jsp">Nosotros</a></li>
-                                            <li><a href="Productos.jsp">Productos</a></li>									
-                                            <li><a href="contacto.jsp">Contacto</a></li>
-                                        </ul>
-                                    </nav>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -316,7 +299,8 @@
         <script src="plugins/easing/easing.js"></script>
         <script src="plugins/progressbar/progressbar.min.js"></script>
         <script src="plugins/parallax-js-master/parallax.min.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+        <script src="js/custom.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnfXaLqntl6y9jYOux7z1HRHoVk8RQZM0"></script>
         <script src="js/custom.js"></script>
         
     </body>

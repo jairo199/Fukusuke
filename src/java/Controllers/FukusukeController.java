@@ -136,7 +136,7 @@ public class FukusukeController extends HttpServlet {
                 
             }
             if (Service.ClienteService.getCliente(rut)!=null) {
-                    listaFail.add("Este usuario " +rut+" ya existe");
+                    listaFail.add("El usuario " +rut+" ya existe");
                     esValido2 = false;
                 }
             if (request.getParameter("txt_telefono").length()!=9) {
