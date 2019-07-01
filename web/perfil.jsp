@@ -141,8 +141,9 @@
                                 <div class="footer_links">
                                     <div class="footer_title" style="color: black;">Panel</div>
                                     <ul>
-                                        <li><a href="#" class="text-success text-center">Mis Datos</a></li>
-                                        <li><a href="mispedidos.html" class="">Mis Pedidos</a></li>
+                                        <li><form action="<c:url value="/LoginController"/>" method="post"><input type="submit" value="Mis Datos" name="btn_misdatos" id="btn_misdatos" class="btn btn-primary"/></form></li>
+                                        <li><form action="<c:url value="/LoginController"/>" method="post"><input type="submit" value="Mis Pedidos" name="btn_mispedidos" id="btn_mispedidos" class="btn btn-primary"/></form></li>
+
                                         <li><form action="<c:url value="/LoginController"/>" method="post"><input type="submit" value="Cerrar Sesión" name="btn_salir" id="btn_salir" class="btn btn-danger"/></form></li>
                                     </ul>
                                 </div>
@@ -210,7 +211,8 @@
 
                                             <li><input type="submit" name="actualizarDatos" value="Actualizar Datos" class="btn btn-success text-center"></li>
 
-                                            <li><a href="#" class="text-warning">Darse de baja</a></li>
+                                            <li><input type="submit" name="btn_bajacliente" value="Darse de Baja" class="btn btn-warning text-center"></li>
+
                                         </form>
 
                                     </ul>

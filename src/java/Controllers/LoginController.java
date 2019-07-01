@@ -162,6 +162,19 @@ public class LoginController extends HttpServlet {
             }
         }
 
+        
+        
+        /**
+         * BOTONE CLIENTE
+         */
+        
+        
+        
+        
+        
+            
+ 
+        
         //SI SE CIERRA LA SESSION SE DIRIGE A INDEX
         if (request.getParameter("btn_salir") != null) {
 
@@ -172,6 +185,9 @@ public class LoginController extends HttpServlet {
 
         }
         request.getRequestDispatcher("login.jsp").forward(request, response);
+        
+        
+        
 
     }
 
