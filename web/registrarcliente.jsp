@@ -269,7 +269,7 @@
 
                                                 <select class="form-control" id="comunas" name="comunas"></select>
                                                 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-                                                <script src="/js/ciudades.js"></script>
+                                                <script src="js/ciudades.js"></script>
                                             </div>
                                         </div>
 

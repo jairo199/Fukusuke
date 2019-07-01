@@ -73,13 +73,17 @@ public class Carrito extends HttpServlet {
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
 
-        //Carrito = (ArrayList<DetallePedido>) Session.getAttribute("Carrito");
-        for (DetallePedido i : Carrito) {
-            total = total + i.getSub_total();
-        }
+        try {
+            //Carrito = (ArrayList<DetallePedido>) Session.getAttribute("Carrito");
+            for (DetallePedido i : Carrito) {
+                total = total + i.getSub_total();
+            }
 
-        request.setAttribute("Total", total);
-        request.getRequestDispatcher("Carrito.jsp").forward(request, response);
+            request.setAttribute("Total", total);
+            request.getRequestDispatcher("Carrito.jsp").forward(request, response);
+        } catch (Exception e) {
+             request.getRequestDispatcher("Carrito.jsp").forward(request, response);
+        }
 
     }
 
@@ -192,6 +196,34 @@ public class Carrito extends HttpServlet {
             }
 
         }
+
+        if (request.getParameter("btn_edit") != null) {
+
+            try {
+                int cod_producto = (int) Integer.parseInt(request.getParameter("cod_producto"));
+
+                for (DetallePedido item : Carrito) {
+
+                    if (item.getCodigo_producto() == cod_producto) {
+                        Carrito.remove(item);
+                    }
+
+                }
+
+                //SE SETEA LA VARIABLE TOTAL
+                for (DetallePedido item : Carrito) {
+                    total = total + item.getSub_total();
+                }
+
+                request.setAttribute("Total", total);
+                request.setAttribute("msg", "Producto removido con éxito.");
+                request.getRequestDispatcher("Carrito.jsp").forward(request, response);
+            } catch (Exception e) {
+                request.getRequestDispatcher("Carrito.jsp").forward(request, response);
+            }
+
+        }
+
         //request.getRequestDispatcher("Carrito.jsp").forward(request, response);        
     }
 

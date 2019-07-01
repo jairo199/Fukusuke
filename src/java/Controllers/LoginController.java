@@ -166,6 +166,7 @@ public class LoginController extends HttpServlet {
         if (request.getParameter("btn_salir") != null) {
 
             request.getSession().removeAttribute("SessionUsuario");
+            request.getSession().removeAttribute("Carrito");
 
             request.getRequestDispatcher("login.jsp").forward(request, response);
 

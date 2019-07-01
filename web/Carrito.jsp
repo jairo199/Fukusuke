@@ -80,7 +80,7 @@
                     <nav class="main_nav">
                         <jsp:include page="navbar/MenuPrincipal.jsp" />
                     </nav>
-                    <div class="submit ml-auto"><a href="index.html">Mi carrito <label id="Carrito">(<c:out value="${Carrito.size()}"/>)</label></a></div>
+                    <div class="submit ml-auto"><a href="/Fukusuke/Carrito"><span class="fa fa-shopping-basket"> </span> Mi carrito <label id="Carrito">(<c:out value="${Carrito.size()}"/>)</label></a></div>
                     <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
                 </div>
 
