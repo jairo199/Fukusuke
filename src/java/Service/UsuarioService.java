@@ -37,8 +37,9 @@ public class UsuarioService {
             conn.setRequestProperty("Accept", "application/json");
 
             if (conn.getResponseCode() != 200) {
-                throw new RuntimeException("Failed : HTTP error code : "
-                        + conn.getResponseCode());
+//                throw new RuntimeException("Failed : HTTP error code : "
+//                        + conn.getResponseCode());
+                        return null;
             }
 
             BufferedReader br = new BufferedReader(new InputStreamReader(

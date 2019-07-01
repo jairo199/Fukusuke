@@ -101,28 +101,34 @@ public class sistema extends HttpServlet {
 
             String codigo = request.getParameter("codigo");
             String password = request.getParameter("password");
-
+            
+            boolean vacio =false;
+            
             if (request.getParameter("codigo").isEmpty()) {
                 esValido = false;
+                vacio = true;
                 listaFail.add("Debes ingresar tu Codigo.");
             }
 
             if (request.getParameter("password").trim().isEmpty()) {
                 esValido = false;
+                vacio = true;
                 listaFail.add("Debes ingresar tu contraseña.");
             }
 
             Login login = new Login(codigo, password);
+            if (!vacio) {
+                if (UsuarioService.getUsuario(Integer.parseInt(codigo)) == null) {
+                    esValido = false;
+                    listaFail.add("Usuario no registrado");
+                }
 
-            if (UsuarioService.getUsuario(Integer.parseInt(codigo)) == null) {
-                esValido = false;
-                listaFail.add("Usuario no registrado");
+                if (!LoginService.putUsuario(login)) {
+                    esValido = false;
+                    listaFail.add("Contraseña Incorrecta");
+                }
             }
-
-            if (!LoginService.putUsuario(login)) {
-                esValido = false;
-                listaFail.add("Contraseña Incorrecta");
-            }
+            
 
             if (!esValido) {
                 request.setAttribute("listaErrores", listaFail);

@@ -30,7 +30,18 @@
     <div class="super_container">
         <div class="super_overlay"></div>
         <!-- Header -->
-         <jsp:include page="navbar/Headerusuarios.jsp" />
+
+             <header class="header">
+            <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                <div class="logo"><a >FUKU<span>SUKE</span></a></div>
+                <nav class="main_nav">
+                   
+                    
+                </nav>
+                                  
+            </div>
+        </header>
+                <!-- Menu -->
 
             
 
@@ -164,12 +175,7 @@
                                         Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Fukusuke 2019
                                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
                                     <nav class="footer_nav order-md-2 order-1 ml-md-auto">
-                                        <ul class="d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="nosotros.html">Nosotros</a></li>
-                                            <li><a href="Productos.html">Productos</a></li>									
-                                            <li><a href="contacto.html">Contacto</a></li>
-                                        </ul>
+                                        
                                     </nav>
                                 </div>
                             </div>
