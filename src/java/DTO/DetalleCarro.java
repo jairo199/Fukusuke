@@ -9,8 +9,8 @@ package DTO;
  *
  * @author Jairo
  */
-public class DetallePedido {
-
+public class DetalleCarro {
+    
     private String NombreProducto;
     private int Codigo_producto;
     private int Codigo_pedido;
@@ -18,10 +18,10 @@ public class DetallePedido {
     private int Precio_producto;
     private int Sub_total;
 
-    public DetallePedido() {
+    public DetalleCarro() {
     }
 
-    public DetallePedido(String NombreProducto, int Codigo_producto, int Codigo_pedido, int Cantidad, int Precio_producto, int Sub_total) {
+    public DetalleCarro(String NombreProducto, int Codigo_producto, int Codigo_pedido, int Cantidad, int Precio_producto, int Sub_total) {
         this.NombreProducto = NombreProducto;
         this.Codigo_producto = Codigo_producto;
         this.Codigo_pedido = Codigo_pedido;
@@ -77,7 +77,8 @@ public class DetallePedido {
     public void setSub_total(int Sub_total) {
         this.Sub_total = Sub_total;
     }
-
     
-
+    
+    
+    
 }

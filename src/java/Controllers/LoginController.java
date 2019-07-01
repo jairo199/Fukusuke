@@ -46,9 +46,9 @@ public class LoginController extends HttpServlet {
             Carrito = new ArrayList<DetallePedido>();
             System.out.println("1");
         } else {
-            
+
             Carrito = (ArrayList<DetallePedido>) Session.getAttribute("Carrito");
-            
+
         }
 
         //SI LA SESSION ESTA INICIADA, POR DEFAUL VA A PERFIL  
@@ -142,12 +142,12 @@ public class LoginController extends HttpServlet {
             if (esValido) {
 
                 if (Session.getAttribute("SessionUsuario") == null) {
-                    
-                    Carrito =  new ArrayList<DetallePedido>();
-                    
+
+                    Carrito = new ArrayList<DetallePedido>();
+
                     Session.setAttribute("SessionUsuario", cli.getCliente(rut));
                     Session.setAttribute("Carrito", Carrito);
-                   
+
                 }
                 request.setAttribute("email", cli.getCliente(rut).getEmail());
 
@@ -162,30 +162,87 @@ public class LoginController extends HttpServlet {
             }
         }
 
-        
-        
         /**
          * BOTONE CLIENTE
          */
         if (request.getParameter("btn_misdatos") != null) {
-
+            request.getRequestDispatcher("Error.jsp").forward(request, response);
         }
         if (request.getParameter("btn_mispedidos") != null) {
-
+            request.getRequestDispatcher("Error.jsp").forward(request, response);
         }
-        
+
         //actuaizar datos de cliente        
-        if (request.getParameter("actualizarDatos") != null){
+        if (request.getParameter("actualizarDatos") != null) {
             request.getRequestDispatcher("actualizardatos.jsp").forward(request, response);
-        }  
-        
+        }
+
+        if (request.getParameter("updateClienteDatos") != null) {
+
+            try {
+                String run = request.getParameter("run");
+
+                Cliente cli = ClienteService.getCliente(run);
+
+                cli.setEmail(request.getParameter("email"));
+                cli.setNombre_completo(request.getParameter("nombre"));
+                cli.setContrasena(request.getParameter("pass1"));
+                cli.setDireccion(request.getParameter("dir"));
+                cli.setSexo(request.getParameter("genero"));
+                cli.setTelefono(request.getParameter("telefono"));
+
+                ClienteService.putCliente(cli);
+
+                Session.setAttribute("SessionUsuario", cli);
+
+                request.getRequestDispatcher("perfil.jsp").forward(request, response);
+            } catch (Exception e) {
+
+                request.getRequestDispatcher("perfil.jsp").forward(request, response);
+            }
+        }
+
         if (request.getParameter("btn_bajacliente") != null) {
 
+            try {
+                
+                String run = request.getParameter("run");
+                Cliente cli = ClienteService.getCliente(run);
+                
+                cli.setEstado("0");
+
+                ClienteService.putCliente(cli);
+
+                Session.setAttribute("SessionUsuario", cli);
+                request.getRequestDispatcher("perfil.jsp").forward(request, response);
+            } catch (Exception e) {
+
+                request.getRequestDispatcher("perfil.jsp").forward(request, response);
+            }
         }
         
-            
- 
+        if (request.getParameter("btn_altacliente") != null) {
+
+            try {
+                
+                String run = request.getParameter("run");
+                Cliente cli = ClienteService.getCliente(run);
+                
+                cli.setEstado("1");
+
+                ClienteService.putCliente(cli);
+
+                Session.setAttribute("SessionUsuario", cli);
+                request.getRequestDispatcher("perfil.jsp").forward(request, response);
+            } catch (Exception e) {
+
+                request.getRequestDispatcher("perfil.jsp").forward(request, response);
+            }
+        }
         
+        
+        
+
         //SI SE CIERRA LA SESSION SE DIRIGE A INDEX
         if (request.getParameter("btn_salir") != null) {
 
@@ -196,9 +253,6 @@ public class LoginController extends HttpServlet {
 
         }
         request.getRequestDispatcher("login.jsp").forward(request, response);
-        
-        
-        
 
     }
 

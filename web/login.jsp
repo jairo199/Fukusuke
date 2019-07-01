@@ -28,45 +28,7 @@
             <!-- Header -->
             <header class="header">
                 <!-- Header Bar -->
-                <div class="header_bar d-flex flex-row align-items-center justify-content-start">
-                    <div class="header_list">
-                        <ul class="d-flex flex-row align-items-center justify-content-start">
-                            <!-- Phone -->
-                            <li class="d-flex flex-row align-items-center justify-content-start">
-                                <div><img src="images/phone-call.svg" alt=""></div>
-                                <span>+569 555 555 55</span>
-                            </li>
-                            <!-- Address -->
-                            <li class="d-flex flex-row align-items-center justify-content-start">
-                                <div><img src="images/placeholder.svg" alt=""></div>
-                                <span>Direccion, Local , Concepción</span>
-                            </li>
-                            <!-- Email -->
-                            <li class="d-flex flex-row align-items-center justify-content-start">
-                                <div><img src="images/envelope.svg" alt=""></div>
-                                <span>contacto@fukusuke.cl</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="ml-auto d-flex flex-row align-items-center justify-content-start">
-                        <div class="social">
-                            <ul class="d-flex flex-row align-items-center justify-content-start">
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="log_reg d-flex flex-row align-items-center justify-content-start">
-                            <ul class="d-flex flex-row align-items-start justify-content-start">
-
-                                <li></li>
-                                <li><a data-toggle="modal" href="#modalRegisto">Registro</a></li>
-
-
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <jsp:include page="navbar/Header.jsp" />
 
 
                 <!-- Header Content -->
@@ -113,7 +75,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="home_content text-center">
-                                <div class="home_title">Inice Sesión</div>
+                                <div class="home_title">Inicie Sesión</div>
                             </div>
                         </div>
                     </div>

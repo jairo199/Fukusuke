@@ -161,5 +161,52 @@ public class ClienteService {
 
         }
     }
+    
+    
+    public static boolean putCliente(Cliente cliente) {
+        try {
+
+            URL url = new URL(Service.ClienteService.url);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setDoOutput(true);
+            conn.setRequestMethod("PUT");
+            conn.setRequestProperty("Content-Type", "application/json");
+
+            Gson g = new Gson();
+
+            String input = g.toJson(cliente);
+
+            OutputStream os = conn.getOutputStream();
+            os.write(input.getBytes());
+            os.flush();
+
+            if (conn.getResponseCode() != 200) {
+                return false;
+            }
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(
+                    (conn.getInputStream())));
+
+            String output;
+            System.out.println("Output from Server .... \n");
+            while ((output = br.readLine()) != null) {
+                System.out.println(output);
+            }
+
+            conn.disconnect();
+            return true;
+
+        } catch (MalformedURLException e) {
+
+            e.printStackTrace();
+            return false;
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+            return false;
+
+        }
+    }
 
 }

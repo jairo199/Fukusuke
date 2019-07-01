@@ -6,8 +6,9 @@
 package Controllers;
 
 import DTO.DetallePedido;
+import DTO.Pedido;
 import DTO.Producto;
-import DTO.Carro;
+import Service.PedidoService;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
@@ -26,7 +27,6 @@ public class Carrito extends HttpServlet {
 
     HttpSession Session;
     ArrayList<DetallePedido> Carrito;
-   
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -81,6 +81,17 @@ public class Carrito extends HttpServlet {
                 total = total + i.getSub_total();
             }
 
+            //buscar ultimo id de pedido
+            int max = 0;
+            for (Pedido item : PedidoService.getPedidos()) {
+                if (item != null && Integer.parseInt(item.getCodigo_pedido()) >= max) {
+                    max = Integer.parseInt(item.getCodigo_pedido());
+                }
+            }
+
+            int NUM_PEDIDO = max + 1;
+            request.setAttribute("NUM_PEDIDO", NUM_PEDIDO);
+
             request.setAttribute("Total", total);
             request.getRequestDispatcher("Carrito.jsp").forward(request, response);
         } catch (Exception e) {
@@ -125,8 +136,7 @@ public class Carrito extends HttpServlet {
 
             //CREATE PRODUCTO DESDE SERVICE    
             Producto p = Service.ProductoService.getProducto(id_producto);
-           
-            
+
             //SETEO DETALLE PEDIDO CON DATOS DEL PRODUCTO Y PARAMETROS DE LA VISTA
             dp.setCantidad(cantidad);
             dp.setCodigo_producto(p.getCodigo_producto());
@@ -134,14 +144,21 @@ public class Carrito extends HttpServlet {
             dp.setSub_total(p.getPrecio() * cantidad);
             dp.setNombreProducto(p.getDescripcion());
             
+            
+            
+
             //RECORRER CARRITO Y PREGUNTTAR SU EXISTE EL PRODUCTO QUE SE QUIERE AÑADIR
             for (DetallePedido item : Carrito) {
 
                 //SI EXISTE SE SETEAN SUS ATRIBUTOS Y LA VARIABLE TOTAL
                 if (item.getCodigo_producto() == id_producto) {
+                    
                     item.setCantidad(item.getCantidad() + cantidad);
                     item.setSub_total(item.getPrecio_producto() * item.getCantidad());
 
+                    System.out.println(item.toString());
+                    
+                    
                     for (DetallePedido i : Carrito) {
                         total = total + i.getSub_total();
                     }
@@ -162,11 +179,21 @@ public class Carrito extends HttpServlet {
                     total = total + item.getSub_total();
 
                 }
-
-                //REDIRECCION A CARRITO
                 request.setAttribute("Total", total);
+
+                //buscar ultimo id de pedido
+                int max = 0;
+                for (Pedido item : PedidoService.getPedidos()) {
+                    if (item != null && Integer.parseInt(item.getCodigo_pedido()) >= max) {
+                        max = Integer.parseInt(item.getCodigo_pedido());
+                    }
+                }
+
+                int NUM_PEDIDO = max + 1;
+                request.setAttribute("NUM_PEDIDO", NUM_PEDIDO);
+
                 request.setAttribute("msg", "Producto agregado con éxito.");
-                
+                //REDIRECCION A CARRITO
                 request.getRequestDispatcher("Carrito.jsp").forward(request, response);
             }
             request.getRequestDispatcher("Productos.jsp").forward(request, response);
@@ -193,10 +220,22 @@ public class Carrito extends HttpServlet {
                     total = total + item.getSub_total();
                 }
 
+                //buscar ultimo id de pedido
+                int max = 0;
+                for (Pedido item : PedidoService.getPedidos()) {
+                    if (item != null && Integer.parseInt(item.getCodigo_pedido()) >= max) {
+                        max = Integer.parseInt(item.getCodigo_pedido());
+                    }
+                }
+
+                int NUM_PEDIDO = max + 1;
+                request.setAttribute("NUM_PEDIDO", NUM_PEDIDO);
+
                 request.setAttribute("Total", total);
                 request.setAttribute("msg", "Producto removido con éxito.");
                 request.getRequestDispatcher("Carrito.jsp").forward(request, response);
             } catch (Exception e) {
+                request.setAttribute("msg", "Producto removido...");
                 request.getRequestDispatcher("Carrito.jsp").forward(request, response);
             }
 
@@ -207,13 +246,13 @@ public class Carrito extends HttpServlet {
             try {
                 int cod_producto = (int) Integer.parseInt(request.getParameter("id_producto"));
                 int cantidad = (int) Integer.parseInt(request.getParameter("cantidad"));
-                System.out.println("%%%%%%%%%%% cantidad: " + cantidad);
+
                 for (DetallePedido item : Carrito) {
                     if (item.getCodigo_producto() == cod_producto) {
-                        
+
                         item.setCantidad(cantidad);
-                        
-                        item.setSub_total(item.getPrecio_producto()*item.getCantidad());
+
+                        item.setSub_total(item.getPrecio_producto() * item.getCantidad());
                     }
 
                 }
@@ -223,6 +262,17 @@ public class Carrito extends HttpServlet {
                     total = total + itemm.getSub_total();
                 }
 
+                //buscar ultimo id de pedido
+                int max = 0;
+                for (Pedido item : PedidoService.getPedidos()) {
+                    if (item != null && Integer.parseInt(item.getCodigo_pedido()) >= max) {
+                        max = Integer.parseInt(item.getCodigo_pedido());
+                    }
+                }
+
+                int NUM_PEDIDO = max + 1;
+                request.setAttribute("NUM_PEDIDO", NUM_PEDIDO);
+
                 request.setAttribute("Total", total);
                 request.setAttribute("msg", "Producto modificado con éxito.");
                 request.getRequestDispatcher("Carrito.jsp").forward(request, response);
@@ -231,6 +281,38 @@ public class Carrito extends HttpServlet {
                 request.getRequestDispatcher("Carrito.jsp").forward(request, response);
             }
 
+        }
+
+        if (request.getParameter("btn_pay") != null) {
+
+            
+            try {
+                
+                //SE SETEA LA VARIABLE TOTAL
+                for (DetallePedido itemm : Carrito) {
+                    total = total + itemm.getSub_total();
+                }
+
+                //buscar ultimo id de pedido
+                int max = 0;
+                for (Pedido item : PedidoService.getPedidos()) {
+                    if (item != null && Integer.parseInt(item.getCodigo_pedido()) >= max) {
+                        max = Integer.parseInt(item.getCodigo_pedido());
+                    }
+                }
+
+                int NUM_PEDIDO = max + 1;
+                request.setAttribute("NUM_PEDIDO", NUM_PEDIDO);
+
+                request.setAttribute("Total", total);   
+                
+                
+                request.getRequestDispatcher("procesoPago.jsp").forward(request, response);
+
+            } catch (Exception e) {
+                request.getRequestDispatcher("procesoPagojsp").forward(request, response);
+            }
+            
         }
 
         //request.getRequestDispatcher("Carrito.jsp").forward(request, response);        

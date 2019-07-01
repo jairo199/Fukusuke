@@ -35,7 +35,7 @@
                 <!-- Header Bar -->
                 <div class="header_bar d-flex flex-row align-items-center justify-content-start">
                     
-                    <jsp:include page="navbar/Navmorado.jsp" />
+                    <jsp:include page="navbar/Header.jsp" />
                     
                     
                     <div class="ml-auto d-flex flex-row align-items-center justify-content-start">

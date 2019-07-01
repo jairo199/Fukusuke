@@ -29,45 +29,7 @@
             <!-- Header -->
             <header class="header">
                 <!-- Header Bar -->
-                <div class="header_bar d-flex flex-row align-items-center justify-content-start">
-                    <div class="header_list">
-                        <ul class="d-flex flex-row align-items-center justify-content-start">
-                            <!-- Phone -->
-                            <li class="d-flex flex-row align-items-center justify-content-start">
-                                <div><img src="images/phone-call.svg" alt=""></div>
-                                <span>+569 555 555 55</span>
-                            </li>
-                            <!-- Address -->
-                            <li class="d-flex flex-row align-items-center justify-content-start">
-                                <div><img src="images/placeholder.svg" alt=""></div>
-                                <span>Direccion, Local , Concepción</span>
-                            </li>
-                            <!-- Email -->
-                            <li class="d-flex flex-row align-items-center justify-content-start">
-                                <div><img src="images/envelope.svg" alt=""></div>
-                                <span>contacto@fukusuke.cl</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="ml-auto d-flex flex-row align-items-center justify-content-start">
-                        <div class="social">
-                            <ul class="d-flex flex-row align-items-center justify-content-start">
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="log_reg d-flex flex-row align-items-center justify-content-start">
-                            <ul class="d-flex flex-row align-items-start justify-content-start">
-
-                                <li><a data-toggle="modal" href="#modalLogin">Ingresar</a></li>
-                                <li><a data-toggle="modal" href="#modalRegisto">Registro</a></li>
-
-
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <jsp:include page="navbar/Header.jsp" />
 
 
                 <!-- Header Content -->
@@ -155,47 +117,71 @@
                             <div class="footer_title" style="color: black;">Actualizar Datos</div>
                             <br>
                             <div class="container">							
-                                <form class="form-horizontal" action="/action_page.php">
+                                <form action="<c:url value="/LoginController"/>" method="post">
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-12" for="email">Run:</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="run" value="<c:out value="${SessionUsuario.run}"/>"
+                                                   name="run">
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label class="control-label col-sm-12" for="email">Email:</label>
                                         <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="email" placeholder="Ingrese email"
-                                                   name="email" disabled>
+                                            <input type="email" class="form-control" id="email" value="<c:out value="${SessionUsuario.email}"/>"
+                                                   name="email" required>
                                         </div>
-                                    </div>
+                                    </div>             
                                     <div class="form-group">
                                         <label class="control-label col-sm-12" for="nombre">Nombre completo:</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="nombre" placeholder="Nombre Completo"
-                                                   name="nombre">
+                                            <input type="text" class="form-control" id="nombre"  placeholder="Nombre Completo" name="nombre" required value="<c:out value="${SessionUsuario.nombre_completo}"/>">
                                         </div>
                                     </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2" for="genero">Genero</label>
+                                        <div class="col-sm-10">
+                                            <select id="genero" name="genero" class="form-control">
+                                                <option value="M">Masculino</option>
+                                                <option value="F">Femenino</option>
+                                            </select>
+                                        </div>
+                                    </div>              
+
                                     <div class="form-group">
                                         <label class="control-label col-sm-2" for="pass1">Contraseña:</label>
                                         <div class="col-sm-10">
                                             <input type="password" class="form-control" id="pass1"
-                                                   placeholder="Ingrese contraseña" name="pass1">
+                                                   placeholder="Ingrese contraseña" name="pass1" required >
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-sm-12" for="pass2">Reingrese contraseña:</label>
                                         <div class="col-sm-10">
                                             <input type="password" class="form-control" id="pass2"
-                                                   placeholder="Ingrese contraseña" name="pass2">
+                                                   placeholder="Ingrese contraseña" name="pass2" required max="6" min="3">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="control-label col-sm-2" for="dir">Dirección:</label>
                                         <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="dir"
-                                                   placeholder="Ingrese Dirección" name="dir">
+                                            <input type="text" class="form-control" id="dir"
+                                                   placeholder="Ingrese Dirección" name="dir" required minlength="5" value="<c:out value="${SessionUsuario.direccion}"/>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2" for="dir">Teléfono</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="telefono"
+                                                   placeholder="Ingrese Teléfono" name="telefono" required maxlength="9" minlength="9" value="<c:out value="${SessionUsuario.telefono}"/>">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <div class="col-sm-offset-2 col-sm-10">
-                                            <button type="submit" class="btn btn-success btn-block"> Confirmar</button>
+                                            <button type="submit" class="btn btn-success btn-block" id="updateClienteDatos" name="updateClienteDatos"> Confirmar</button>
                                         </div>
                                     </div>
                                 </form>

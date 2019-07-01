@@ -33,45 +33,7 @@
             <!-- Header -->
             <header class="header">
                 <!-- Header Bar -->
-                <div class="header_bar d-flex flex-row align-items-center justify-content-start">
-                    <div class="header_list">
-                        <ul class="d-flex flex-row align-items-center justify-content-start">
-                            <!-- Phone -->
-                            <li class="d-flex flex-row align-items-center justify-content-start">
-                                <div><img src="images/phone-call.svg" alt=""></div>
-                                <span>+569 555 555 55</span>
-                            </li>
-                            <!-- Address -->
-                            <li class="d-flex flex-row align-items-center justify-content-start">
-                                <div><img src="images/placeholder.svg" alt=""></div>
-                                <span>Direccion, Local , ConcepciÃÂ³n</span>
-                            </li>
-                            <!-- Email -->
-                            <li class="d-flex flex-row align-items-center justify-content-start">
-                                <div><img src="images/envelope.svg" alt=""></div>
-                                <span>contacto@fukusuke.cl</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="ml-auto d-flex flex-row align-items-center justify-content-start">
-                        <div class="social">
-                            <ul class="d-flex flex-row align-items-center justify-content-start">
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="log_reg d-flex flex-row align-items-center justify-content-start">
-                            <ul class="d-flex flex-row align-items-start justify-content-start">
-
-                                <li><a data-toggle="modal" href="#modalLogin">Ingresar</a></li>
-                                <li><a data-toggle="modal" href="#modalRegisto">Registro</a></li>
-
-
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <jsp:include page="navbar/Header.jsp" />
 
 
                 <!-- Header Content -->
@@ -149,7 +111,7 @@
                                 <thead class="thead-success">
                                     <tr>
                                         <th scope="col">Producto</th>
-                                        <th scope="col">Producto</th>
+                                        <th scope="col">Cod</th>
                                         <th scope="col">Valor</th>
                                         <th scope="col">Cantidad</th>
                                         <th scope="col">Subtotal</th>
@@ -165,30 +127,30 @@
                                             <th><label><c:out value="${DetallePedido.codigo_producto}"/></label></th>
                                             <th><label><c:out value="${DetallePedido.precio_producto}"/></label></th>
 
-                                            <form method="post" action="<c:url value="/Carrito" />">  
-                                            <th><input id="cantidad" name="cantidad" type="number" max="10" min="1" value="<c:out value="${DetallePedido.cantidad}"/>" class="form-control"/></th>
-                                            <th><label><c:out value="${DetallePedido.sub_total}"/></label></th>
-                                            <th> 
-                                                                                             
-                                                    <input type="hidden" value="${DetallePedido.codigo_producto}" id="id_producto" name="id_producto">
-                                                    
-                                                    <button type="submit" class="btn btn-warning" name="btn_edit"><span class="fa fa-edit"></span></button>                                                
-                                                </form>
-                                            </th>
+                                    <form method="post" action="<c:url value="/Carrito" />">  
+                                        <th><input id="cantidad" name="cantidad" type="number" max="10" min="1" value="<c:out value="${DetallePedido.cantidad}"/>" class="form-control"/></th>
+                                        <th><label><c:out value="${DetallePedido.sub_total}"/></label></th>
+                                        <th> 
+
+                                            <input type="hidden" value="${DetallePedido.codigo_producto}" id="id_producto" name="id_producto">
+
+                                            <button type="submit" class="btn btn-warning" name="btn_edit"><span class="fa fa-edit"></span></button>                                                
+                                    </form>
+                                    </th>
 
 
 
-                                            <th>
-                                                <form method="post" action="<c:url value="/Carrito" />">
-                                                    <input type="hidden" name="cod_producto" value="${DetallePedido.codigo_producto}" id="cod_producto">
-                                                    <button type="submit" id="btn_remove" name="btn_remove" class="btn btn-danger"><span class="fa fa-remove"></span></button>
-                                                </form>
-                                            </th>
+                                    <th>
+                                        <form method="post" action="<c:url value="/Carrito" />">
+                                            <input type="hidden" name="cod_producto" value="${DetallePedido.codigo_producto}" id="cod_producto">
+                                            <button type="submit" id="btn_remove" name="btn_remove" class="btn btn-danger"><span class="fa fa-remove"></span></button>
+                                        </form>
+                                    </th>
 
 
-                                        </tr>
+                                    </tr>
 
-                                    </c:forEach>
+                                </c:forEach>
                                 </tbody>
                             </table>
 
@@ -198,8 +160,8 @@
                     </div>
 
 
-                    <form>
-                        <div class="row">                     
+                    <form method="POST" action="<c:url value="/Carrito"/>"
+                          <div class="row">                     
                             <div class="col-md-4">
                                 <hr>
                                 <div class="footer_title" style="color: black;">Total: $ <c:out value="${Total}"/></div>         
@@ -208,7 +170,19 @@
                             <div class="col-md-8">
                                 <hr>
                                 <div>
-                                    <button type="submit" class="btn btn-success btn-block" ><span class="fa fa-money"></span> Pagar</button>                                
+                                    <input type="hidden" id="order_id" name="order_id" value="<c:out value="${NUM_PEDIDO}"/>">
+                                    <input type="hidden" id="amount" name="amount" value="<c:out value="${Total}"/>">
+                                    <input type="hidden" id="amount_order" name="amount_order" value="<c:out value="${Total}"/>">
+                                    <input type="hidden" name="directpay" value="99"/>
+                                    <input type="hidden" name="percent" value="0"/>
+                                    <input type="hidden" name="currency" value="CLP"/>
+                                    <input type="hidden" name="email_from" value="<c:out value="${SessionUsuario.email}"/>"/>
+                                    <input type="hidden" name="token" value="8d018068a30315b0df231c998d17e9f9"></input>
+                                    <input type="hidden" name="notify_url" value="http://localhost:8080/Fukusuke/1.jsp"/>
+                                    <input type="hidden" name="return_url" value="http://localhost:8080/Fukusuke/2.php"/>
+                                    <input type="hidden" name="detail" value="Fukusuke Pedido N°: <c:out value="${NUM_PEDIDO}"/> | Cliente <c:out value="${SessionUsuario.nombre_completo}"/> "/>
+                                    <input type="hidden" name="adittional" value="0"/>
+                                    <button type="submit" class="btn btn-success btn-block" id="btn_pay" name="btn_pay" ><span class="fa fa-money"></span> Pagar</button>                                
                                 </div>
                                 <div class="form-check-inline" style="margin-top:10px;">                                                               
                                     <input type="checkbox" required="" id="chkPagar" style="margin-right:10px;"> Acepto los términos y condiciones
