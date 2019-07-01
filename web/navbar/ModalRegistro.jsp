@@ -36,9 +36,6 @@
                             </div>
                         </div>
 
-
-
-
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -66,41 +63,58 @@
                                     <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
                                 </div>
                             </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email2">Repita Email</label>
+                                    <input type="email" class="form-control" id="email2" name="email2"placeholder="demo@email.cl" required="true">			    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <hr>
+
+                        <div class="row">
+
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="txt_pass">Contraseña</label>
                                     <input type="password" class="form-control" id="txt_pass" name="txt_pass" placeholder="" required="true">			                                                
                                 </div>
                             </div>
-                        </div>
-                        <hr>
 
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="txt_pass">Repita Contraseña</label>
+                                    <input type="password" class="form-control" id="txt_pass" name="txt_pass" placeholder="" required="true">			                                                
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="row">
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="nombre">Telefono</label>
-                                    <input type="text" class="form-control" id="txt_telefono" name="txt_telefono" placeholder="+569XXXXXXXX" required maxlength="100">			    
+                                    <label for="txt_telefono">Telefono</label>
+                                    <input type="text" class="form-control" id="txt_telefono" name="txt_telefono" placeholder="" required="true">			                                                
                                 </div>
                             </div>
-
+                            
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="txt_dir">Direccion</label>
-                                    <input type="text" class="form-control" id="txt_dir" name="txt_dir" placeholder="ingrese Dirección" required="true">			    
+                                    <label for="txt_dir">Dirección</label>
+                                    <input type="text" class="form-control" id="txt_dir" name="txt_dir" placeholder="" required="true">			                                                
                                 </div>
                             </div>
-                        </div>
 
-                        <hr>
+                            
+                        </div>
 
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="txt_region">Region</label>                                   
-                                    <select class="form-control" id="regiones"></select>
-
+                                    <select class="form-control" id="regiones" name="regiones"></select>
                                 </div>
                             </div>
 
@@ -118,7 +132,7 @@
                                 <div class="form-group">
                                     <label for="txt_comuna">Comuna</label>
 
-                                    <select class="form-control" id="comunas"></select>
+                                    <select class="form-control" id="comunas" name="comunas"></select>
                                     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
                                     <script src="/js/ciudades.js"></script>
                                 </div>

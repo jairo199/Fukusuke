@@ -129,7 +129,7 @@
             <!-- msg -->
             <div class="container">                   
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 text-center">
                         <label class="alert alert-info" id="msg"><c:out value="${msg}"/></label>
                     </div>                        
                 </div>                    
@@ -149,20 +149,43 @@
                                 <thead class="thead-success">
                                     <tr>
                                         <th scope="col">Producto</th>
+                                        <th scope="col">Producto</th>
                                         <th scope="col">Valor</th>
                                         <th scope="col">Cantidad</th>
                                         <th scope="col">Subtotal</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach var="Producto" items="${Carrito}">
+                                    <c:forEach var="DetallePedido" items="${Carrito}">
+
                                         <tr>
-                                            <th><label><c:out value="${Producto}"/></label></th>
-                                            <th><label><c:out value="${Producto.precio_producto}"/></label></th>
-                                            <th><label><c:out value="${Producto.cantidad}"/></label></th>
-                                            <th><label><c:out value="${Producto.sub_total}"/></label></th>
-                                        </tr>
-                                    </c:forEach>
+
+                                            <th><label><c:out value="${DetallePedido.codigo_producto}"/></label></th>
+                                            <th><label><c:out value="${DetallePedido.codigo_producto}"/></label></th>
+                                            <th><label><c:out value="${DetallePedido.precio_producto}"/></label></th>
+
+                                    <form method="post" action="<c:url value="/Carrito" />">
+                                        <th><input id="cantidad" name="cantidad" type="number" max="10" min="1" value="<c:out value="${DetallePedido.cantidad}"/>" class="form-control"/></th>
+                                        <th><label><c:out value="${DetallePedido.sub_total}"/></label></th>
+                                        <th>                                                
+                                            <input type="hidden" value="${DetallePedido.codigo_producto}" id="id_producto">
+                                            <button type="submit" class="btn btn-warning"><span class="fa fa-edit"></span></button>                                                
+                                        </th>
+
+                                    </form>
+
+                                    <th>
+                                        <form method="post" action="<c:url value="/Carrito" />">
+                                            <input type="hidden" name="cod_producto" value="${DetallePedido.codigo_producto}" id="cod_producto">
+                                            <button type="submit" id="btn_remove" name="btn_remove" class="btn btn-danger"><span class="fa fa-remove"></span></button>
+                                        </form>
+                                    </th>
+
+
+                                    </tr>
+
+                                </c:forEach>
                                 </tbody>
                             </table>
 
@@ -176,7 +199,7 @@
                         <div class="row">                     
                             <div class="col-md-4">
                                 <hr>
-                                <div class="footer_title" style="color: black;">Total: $</div>         
+                                <div class="footer_title" style="color: black;">Total: $ <c:out value="${Total}"/></div>         
                                 <hr>
                             </div>
                             <div class="col-md-8">

@@ -137,10 +137,6 @@ public class FukusukeController extends HttpServlet {
             }
             if (esValido2) {
                 
-                
-                
-            
-
                 cliente.setRun(rut);
                 cliente.setNombre_completo(request.getParameter("txt_nombre").toString());
                 cliente.setSexo(request.getParameter("txt_sexo").toString());
@@ -148,9 +144,9 @@ public class FukusukeController extends HttpServlet {
                 cliente.setTelefono(request.getParameter("txt_telefono").toString());
                 cliente.setEmail(request.getParameter("email").toString());
                 cliente.setDireccion(request.getParameter("txt_dir").toString());
-                cliente.setRegion(request.getParameter("txt_region").toString());
+                cliente.setRegion(request.getParameter("regiones").toString());
                 cliente.setProvincia(request.getParameter("txt_provincia").toString());
-                cliente.setComuna(request.getParameter("txt_comuna").toString());
+                cliente.setComuna(request.getParameter("comunas").toString());
 
                 cliente.setCodigo_confirmacion("");
                 cliente.setContrasena(request.getParameter("txt_pass").toString());
